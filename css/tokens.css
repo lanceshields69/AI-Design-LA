@@ -1,0 +1,116 @@
+/*
+  AI Design LA — Design tokens
+  Source of truth: Figma file "AI Design LA" (variable collection).
+  Every color, type, spacing, and radius value used across the site
+  should reference one of these custom properties — no hardcoded
+  values in component/page CSS.
+*/
+
+:root {
+  /* ---------- Color: background ---------- */
+  --bg-canvas: #080726;
+  --bg-canvas-vivid: #0f0d8c;
+  --bg-raised: #eaeaea;
+  --bg-brand: #5a58db;
+  --bg-accent: #ff383c;
+  --bg-white: #ffffff;
+
+  /* ---------- Color: text ---------- */
+  --text-primary: #ffffff;
+  --text-reversed: #000000;
+  --text-subtle: #c1c0c0;
+  --text-muted: #8f8f8f;
+
+  /* ---------- Color: border / rule ---------- */
+  --border-rule: #7a79db;
+
+  /* ---------- Color: overlay ---------- */
+  --overlay-scrim: rgba(0, 0, 0, 0.2);
+
+  /* ---------- Color: brand gradient (gradient bands, logo mark) ---------- */
+  --gradient-brand: linear-gradient(
+    90deg,
+    #a173a9 2.4038%,
+    #df618f 24.038%,
+    #f9a74d 45.192%,
+    #87a571 75.481%,
+    #008eaf 98.558%
+  );
+
+  /* Palindrome of the same 5 colors (start === end) so a single tile can be
+     repeated and scrolled indefinitely with no visible seam at the loop point. */
+  --gradient-brand-loop: linear-gradient(
+    90deg,
+    #a173a9 0%,
+    #df618f 12.5%,
+    #f9a74d 25%,
+    #87a571 37.5%,
+    #008eaf 50%,
+    #87a571 62.5%,
+    #f9a74d 75%,
+    #df618f 87.5%,
+    #a173a9 100%
+  );
+  --gradient-brand-loop-tile: 100vw;
+
+  /* ---------- Font families ---------- */
+  --font-mono: "Space Mono", "Courier New", monospace;
+  --font-heading: "Space Grotesk", "Helvetica Neue", sans-serif;
+  --font-body: "Inter", "Helvetica Neue", sans-serif;
+
+  /* ---------- Font sizes ---------- */
+  --size-display: 72px;
+  --size-display-mobile: 60px;
+  --size-heading-1: 48px;
+  --size-heading-2: 36px;
+  --size-heading-3: 24px;
+  --size-heading-4: 20px;
+  --size-label-medium: 16px;
+  --size-body-large: 20px;
+  --size-body-medium: 16px;
+  --size-body-small: 14px;
+
+  /* ---------- Line heights (unitless where possible source is px) ---------- */
+  --line-height-display: 72px;
+  --line-height-display-mobile: 60px;
+  --line-height-heading-1: 48px;
+  --line-height-heading-2: 36px;
+  --line-height-heading-3: 32px;
+  --line-height-heading-4: 24px;
+  --line-height-label-medium: 1;
+  --line-height-body-large: 28px;
+  --line-height-body-medium: 24px;
+  --line-height-body-small: 21px;
+
+  /* ---------- Letter spacing / tracking ---------- */
+  --tracking-display: -3px;
+  --tracking-heading: -1px;
+  --tracking-body: 0.5px;
+  --tracking-label: 0.32px;
+  --tracking-body-small: 0.3px;
+
+  /* ---------- Spacing ---------- */
+  --space-xs: 12px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 36px;
+  --space-xl: 48px;
+  --space-xxl: 60px;
+  --space-xxxl: 160px;
+  --space-xxxxl: 200px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 3px;
+  --radius-md: 8px;
+
+  /* ---------- Layout ---------- */
+  /* Rendered height of .site-header on mobile, where it sits in-flow
+     (sticky) above the hero instead of floating over it. */
+  --header-height-mobile: 80px;
+
+  /* ---------- Motion ---------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-medium: 300ms;
+  --duration-slow: 6s;
+}
