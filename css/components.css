@@ -417,6 +417,128 @@
   }
 }
 
+/* ---------- Card: partner ---------- */
+
+.partner-card {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  padding: var(--space-xxl);
+  border-radius: var(--radius-md);
+  background: var(--bg-white);
+  overflow: hidden;
+}
+
+.partner-card__mark {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.partner-card__lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  min-width: 0;
+}
+
+.partner-card__logo {
+  width: 75px;
+  height: 75px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.partner-card__wordmark {
+  font-family: "Outfit", var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(28px, 4.4vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--text-reversed);
+  white-space: nowrap;
+}
+
+.partner-card__lockup .partner-card__wordmark {
+  font-size: clamp(20px, 2.8vw, 40px);
+}
+
+.partner-card__wordmark--neochrome {
+  font-family: "Roboto Condensed", var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(30px, 4.6vw, 66px);
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.partner-card__wordmark--flicker {
+  animation: partner-wordmark-flicker 2s linear infinite;
+}
+
+@keyframes partner-wordmark-flicker {
+  0% {
+    opacity: 0;
+  }
+  58.45% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  }
+  86.2% {
+    opacity: 1;
+  }
+  99.9% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.partner-card__link {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  padding: 7px;
+  border-radius: 0 0 var(--radius-md) 0;
+  background: var(--bg-raised);
+  transition: background var(--duration-fast) var(--ease-standard);
+}
+
+.partner-card__link:hover,
+.partner-card__link:focus-visible {
+  background: var(--border-rule);
+}
+
+.partner-card__link img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .partner-card {
+    height: auto;
+    min-height: 180px;
+    padding: var(--space-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-card__wordmark--flicker {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {

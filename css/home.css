@@ -245,6 +245,10 @@
   padding: var(--space-xxxxl) var(--space-xxl);
 }
 
+.section--partners {
+  padding: var(--space-xxxxl) var(--space-xxl);
+}
+
 .section__intro {
   display: flex;
   flex-direction: column;
@@ -275,7 +279,8 @@
 @media (max-width: 900px) {
   .section,
   .section--about,
-  .section--why {
+  .section--why,
+  .section--partners {
     padding: var(--space-xxl) var(--space-md) calc(var(--space-xxl) + 10px);
     gap: var(--space-lg);
   }
@@ -337,6 +342,24 @@
 
 @media (max-width: 900px) {
   .idea-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Partners ---------- */
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl);
+  width: 100%;
+  max-width: 1608px;
+}
+
+@media (max-width: 900px) {
+  .partner-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
     margin-inline: auto;
