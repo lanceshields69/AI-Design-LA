@@ -43,6 +43,7 @@
   padding: 205px var(--space-xxl);
   overflow: clip;
   isolation: isolate;
+  background-color: var(--bg-canvas);
 }
 
 .hero__image {
@@ -52,6 +53,94 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  opacity: 1;
+}
+
+.hero__image--fade-in {
+  transition: opacity var(--duration-medium) var(--ease-standard);
+}
+
+/* ---------- Hero entrance: mosaic reveal ---------- */
+/* Populated by js/main.js; tiles start opaque (matching --bg-canvas) and
+   fade/scale away in randomized order to reveal the hero image beneath. */
+
+.hero__mosaic {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__mosaic-tile {
+  position: absolute;
+  background-color: var(--bg-canvas);
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity var(--duration-medium) var(--ease-standard),
+    transform var(--duration-medium) var(--ease-standard);
+  will-change: opacity, transform;
+}
+
+.hero__mosaic-tile.is-revealed {
+  opacity: 0;
+  transform: scale(1.12);
+}
+
+/* ---------- Hero entrance: headline type effect ---------- */
+
+.hero__title-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.35em);
+  animation: hero-char-in var(--duration-medium) var(--ease-standard) forwards;
+}
+
+@keyframes hero-char-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  margin-left: 4px;
+  background: currentColor;
+  vertical-align: -0.1em;
+  opacity: 0;
+  animation: hero-caret-blink 900ms steps(1, jump-none) infinite;
+}
+
+.hero__caret.is-done {
+  display: none;
+}
+
+@keyframes hero-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__title-char {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__caret {
+    display: none;
+  }
+
+  .hero__mosaic-tile {
+    transition: none;
+  }
 }
 
 .hero__scrim {
