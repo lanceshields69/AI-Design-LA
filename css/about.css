@@ -1,0 +1,53 @@
+/*
+  AI Design LA — About page layout
+  Page-specific grids only. Shared layout (hero, section shell, gradient
+  band, partner grid, join) lives in components.css.
+*/
+
+/* ---------- What we do ---------- */
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xl) var(--space-lg);
+  width: 100%;
+  max-width: 1000px;
+}
+
+@media (max-width: 640px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Who we are ---------- */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xxl) var(--space-lg);
+  width: 100%;
+  max-width: 1000px;
+}
+
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- What we stand for ---------- */
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 1000px;
+}
+
+@media (max-width: 640px) {
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+}

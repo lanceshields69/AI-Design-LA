@@ -20,9 +20,11 @@
   --text-reversed: #000000;
   --text-subtle: #c1c0c0;
   --text-muted: #8f8f8f;
+  --text-brand: #5a58db;
 
   /* ---------- Color: border / rule ---------- */
   --border-rule: #7a79db;
+  --border-button: #5a58db;
 
   /* ---------- Color: overlay ---------- */
   --overlay-scrim: rgba(0, 0, 0, 0.2);

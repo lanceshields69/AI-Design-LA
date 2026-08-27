@@ -1,64 +1,10 @@
 /*
   AI Design LA — Home page layout
-  Section-specific styling. Pairs with tokens.css + components.css.
+  Homepage-only styling: the headline type effect + mosaic hero entrance
+  (and the script that drives them), plus the Explore/Events/Ideas grids
+  that only appear on this page. Shared layout (hero, section shell,
+  gradient band, partner grid, join) lives in components.css.
 */
-
-/* ---------- Gradient band ---------- */
-
-.gradient-band {
-  height: var(--space-xs);
-  width: 100%;
-  overflow: hidden;
-  background-image: var(--gradient-brand-loop);
-  background-repeat: repeat-x;
-  background-size: var(--gradient-brand-loop-tile) 100%;
-  animation: gradient-band-scroll var(--duration-slow) linear infinite;
-}
-
-@keyframes gradient-band-scroll {
-  from {
-    background-position-x: 0;
-  }
-  to {
-    background-position-x: calc(var(--gradient-brand-loop-tile) * -1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .gradient-band {
-    animation: none;
-  }
-}
-
-/* ---------- Hero ---------- */
-
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: calc(100vh - var(--space-xs));
-  padding: 205px var(--space-xxl);
-  overflow: clip;
-  isolation: isolate;
-  background-color: var(--bg-canvas);
-}
-
-.hero__image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 1;
-}
-
-.hero__image--fade-in {
-  transition: opacity var(--duration-medium) var(--ease-standard);
-}
 
 /* ---------- Hero entrance: mosaic reveal ---------- */
 /* Populated by js/main.js; tiles start opaque (matching --bg-canvas) and
@@ -143,51 +89,7 @@
   }
 }
 
-.hero__scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(8, 7, 38, 0.55) 0%, rgba(8, 7, 38, 0.25) 40%, rgba(8, 7, 38, 0.65) 100%);
-  z-index: -1;
-}
-
-.hero__logo {
-  position: absolute;
-  top: var(--space-xl);
-  left: var(--space-xl);
-  width: 150px;
-  height: auto;
-}
-
-.hero__nav {
-  position: absolute;
-  top: var(--space-xl);
-  right: var(--space-xxl);
-}
-
-.hero__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-lg);
-  max-width: 1000px;
-  text-align: center;
-  color: var(--text-primary);
-}
-
-.hero__content .type-body-large {
-  color: var(--text-primary);
-}
-
 @media (max-width: 900px) {
-  .hero {
-    min-height: calc(100vh - var(--header-height-mobile) - var(--space-xs));
-    padding: var(--space-xl) var(--space-md);
-  }
-
-  .hero__logo {
-    display: none;
-  }
-
   .hero__title {
     font-size: calc(var(--size-display-mobile) * 0.8);
     line-height: calc(var(--line-height-display-mobile) * 0.8);
@@ -206,83 +108,6 @@
   .section--about .type-body-large {
     font-size: calc(var(--size-body-large) * 0.8);
     line-height: calc(var(--line-height-body-large) * 0.8);
-  }
-}
-
-/* ---------- Generic section shell ---------- */
-
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xl);
-  width: 100%;
-  padding: var(--space-xxxl) var(--space-xxl);
-  text-align: center;
-}
-
-.section--canvas {
-  background: var(--bg-canvas);
-  color: var(--text-primary);
-}
-
-.section--canvas-vivid {
-  background: var(--bg-canvas-vivid);
-  color: var(--text-primary);
-}
-
-.section--raised {
-  background: var(--bg-raised);
-  color: var(--text-reversed);
-}
-
-.section--about {
-  padding: var(--space-xxxxl) var(--space-xxl);
-}
-
-.section--why {
-  padding: var(--space-xxxxl) var(--space-xxl);
-}
-
-.section--partners {
-  padding: var(--space-xxxxl) var(--space-xxl);
-}
-
-.section__intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-lg);
-  max-width: 1000px;
-}
-
-.section__intro--tight {
-  gap: var(--space-md);
-}
-
-.section__eyebrow {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  text-transform: uppercase;
-}
-
-.section__body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  max-width: 1000px;
-  text-align: left;
-}
-
-@media (max-width: 900px) {
-  .section,
-  .section--about,
-  .section--why,
-  .section--partners {
-    padding: var(--space-xxl) var(--space-md) calc(var(--space-xxl) + 10px);
-    gap: var(--space-lg);
   }
 }
 
@@ -345,67 +170,5 @@
     grid-template-columns: 1fr;
     max-width: 500px;
     margin-inline: auto;
-  }
-}
-
-/* ---------- Partners ---------- */
-
-.partner-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-xl);
-  width: 100%;
-  max-width: 1608px;
-}
-
-@media (max-width: 900px) {
-  .partner-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin-inline: auto;
-  }
-}
-
-/* ---------- Join us ---------- */
-
-.join {
-  position: relative;
-  isolation: isolate;
-  overflow: clip;
-  color: var(--text-primary);
-}
-
-.join__image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.join__scrim {
-  position: absolute;
-  inset: 0;
-  background: var(--overlay-scrim);
-  z-index: -1;
-}
-
-.join__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-}
-
-@media (max-width: 640px) {
-  .join__actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .join__actions .btn {
-    width: min(100%, 320px);
   }
 }

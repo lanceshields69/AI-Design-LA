@@ -244,6 +244,255 @@
   color: var(--text-primary);
 }
 
+/* ---------- Gradient band ---------- */
+/* Shared brand-gradient divider strip, used at the top/bottom of <main>
+   on every page. */
+
+.gradient-band {
+  height: var(--space-xs);
+  width: 100%;
+  overflow: hidden;
+  background-image: var(--gradient-brand-loop);
+  background-repeat: repeat-x;
+  background-size: var(--gradient-brand-loop-tile) 100%;
+  animation: gradient-band-scroll var(--duration-slow) linear infinite;
+}
+
+@keyframes gradient-band-scroll {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: calc(var(--gradient-brand-loop-tile) * -1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-band {
+    animation: none;
+  }
+}
+
+/* ---------- Hero ---------- */
+/* Shared full-bleed photo hero. `.hero--page` sizes it down for secondary
+   pages (About, and future pages) instead of the homepage's near-full-viewport
+   treatment. Homepage-only entrance-animation rules (mosaic reveal, headline
+   type effect) live in home.css alongside the script that drives them. */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: calc(100vh - var(--space-xs));
+  padding: 205px var(--space-xxl);
+  overflow: clip;
+  isolation: isolate;
+  background-color: var(--bg-canvas);
+}
+
+.hero--page {
+  min-height: 700px;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+}
+
+.hero__image--fade-in {
+  transition: opacity var(--duration-medium) var(--ease-standard);
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 7, 38, 0.55) 0%, rgba(8, 7, 38, 0.25) 40%, rgba(8, 7, 38, 0.65) 100%);
+  z-index: -1;
+}
+
+.hero__logo {
+  position: absolute;
+  top: var(--space-xl);
+  left: var(--space-xl);
+  width: 150px;
+  height: auto;
+}
+
+.hero__nav {
+  position: absolute;
+  top: var(--space-xl);
+  right: var(--space-xxl);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  max-width: 1000px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.hero__content .type-body-large {
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: calc(100vh - var(--header-height-mobile) - var(--space-xs));
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .hero--page {
+    min-height: auto;
+  }
+
+  .hero__logo {
+    display: none;
+  }
+}
+
+/* ---------- Section shell ---------- */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  width: 100%;
+  padding: var(--space-xxxl) var(--space-xxl);
+  text-align: center;
+}
+
+.section--canvas {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+}
+
+.section--canvas-vivid {
+  background: var(--bg-canvas-vivid);
+  color: var(--text-primary);
+}
+
+.section--raised {
+  background: var(--bg-raised);
+  color: var(--text-reversed);
+}
+
+/* Spacious vertical rhythm (xxxxl) for sections that need more breathing
+   room than the default section padding — combine with a semantic
+   .section--<name> hook alongside this on the element. */
+.section--spacious {
+  padding: var(--space-xxxxl) var(--space-xxl);
+}
+
+.section__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  max-width: 1000px;
+}
+
+.section__intro--tight {
+  gap: var(--space-md);
+}
+
+.section__eyebrow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-transform: uppercase;
+}
+
+.section__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 1000px;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .section,
+  .section--spacious {
+    padding: var(--space-xxl) var(--space-md) calc(var(--space-xxl) + 10px);
+    gap: var(--space-lg);
+  }
+}
+
+/* ---------- Partner grid ---------- */
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl);
+  width: 100%;
+  max-width: 1608px;
+}
+
+@media (max-width: 900px) {
+  .partner-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Join us ---------- */
+
+.join {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  color: var(--text-primary);
+}
+
+.join__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.join__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-scrim);
+  z-index: -1;
+}
+
+.join__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+@media (max-width: 640px) {
+  .join__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .join__actions .btn {
+    width: min(100%, 320px);
+  }
+}
+
 /* ---------- Section icon ---------- */
 
 .icon {
@@ -537,6 +786,118 @@
     animation: none;
     opacity: 1;
   }
+}
+
+/* ---------- Card: program (numbered, dashed top rule) ---------- */
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px dashed var(--border-button);
+  text-align: left;
+}
+
+.program-card__index {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  /* First stop of --gradient-brand, used flat as the numbering accent. */
+  color: #a173a9;
+}
+
+.program-card__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--size-heading-4);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.program-card__body {
+  font-family: var(--font-body);
+  font-size: var(--size-body-large);
+  line-height: var(--line-height-body-large);
+  letter-spacing: var(--tracking-body);
+  color: var(--text-subtle);
+}
+
+/* ---------- Card: team ---------- */
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px dashed var(--border-rule);
+  text-align: left;
+}
+
+.team-card__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--size-heading-3);
+  line-height: var(--line-height-heading-3);
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+}
+
+.team-card__role {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-body-small);
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
+
+.team-card__bio {
+  font-family: var(--font-body);
+  font-size: var(--size-body-large);
+  line-height: var(--line-height-body-large);
+  letter-spacing: var(--tracking-body);
+  max-width: 330px;
+}
+
+.team-card__link {
+  font-family: var(--font-body);
+  font-size: var(--size-body-medium);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--tracking-body);
+  color: var(--text-brand);
+}
+
+/* ---------- Card: value ---------- */
+
+.value-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px dashed var(--border-rule);
+  text-align: left;
+}
+
+.value-card__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--size-body-large);
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.value-card__body {
+  font-family: var(--font-body);
+  font-size: var(--size-body-large);
+  line-height: var(--line-height-body-large);
+  letter-spacing: var(--tracking-body);
+  color: var(--text-subtle);
 }
 
 /* ---------- Footer ---------- */
