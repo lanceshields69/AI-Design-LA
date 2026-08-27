@@ -1,0 +1,59 @@
+/*
+  AI Design LA — Events page layout
+  Page-specific layout only. Shared layout (hero, section shell,
+  gradient band, join, event-row/tag components) lives in components.css.
+*/
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.event-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+.event-group__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--size-heading-4);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+}
+
+.event-group__title--upcoming {
+  color: var(--bg-accent);
+}
+
+.event-group__title--past {
+  color: var(--text-brand-light);
+}
+
+.event-group__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .event-list {
+    max-width: 100%;
+  }
+}

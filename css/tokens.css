@@ -21,6 +21,7 @@
   --text-subtle: #c1c0c0;
   --text-muted: #8f8f8f;
   --text-brand: #5a58db;
+  --text-brand-light: #7a79db;
 
   /* ---------- Color: border / rule ---------- */
   --border-rule: #7a79db;
@@ -68,6 +69,7 @@
   --size-heading-3: 24px;
   --size-heading-4: 20px;
   --size-label-medium: 16px;
+  --size-label-small: 13px;
   --size-body-large: 20px;
   --size-body-medium: 16px;
   --size-body-small: 14px;
@@ -80,6 +82,7 @@
   --line-height-heading-3: 32px;
   --line-height-heading-4: 24px;
   --line-height-label-medium: 1;
+  --line-height-label-small: 19.5px;
   --line-height-body-large: 28px;
   --line-height-body-medium: 24px;
   --line-height-body-small: 21px;
@@ -89,9 +92,12 @@
   --tracking-heading: -1px;
   --tracking-body: 0.5px;
   --tracking-label: 0.32px;
+  --tracking-label-small: 0.26px;
   --tracking-body-small: 0.3px;
 
   /* ---------- Spacing ---------- */
+  --space-xxxs: 4px;
+  --space-xxs: 8px;
   --space-xs: 12px;
   --space-sm: 16px;
   --space-md: 24px;

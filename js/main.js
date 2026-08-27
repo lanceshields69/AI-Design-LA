@@ -254,3 +254,36 @@
     }, totalRevealMs + 80);
   }
 })();
+
+// ---------- Events filter bar ----------
+(function () {
+  "use strict";
+
+  var filterBar = document.querySelector("[data-filter-bar]");
+  if (!filterBar) {
+    return;
+  }
+
+  var lists = document.querySelectorAll("[data-filter-list]");
+  var buttons = filterBar.querySelectorAll("[data-filter]");
+
+  filterBar.addEventListener("click", function (event) {
+    var button = event.target.closest("[data-filter]");
+    if (!button) {
+      return;
+    }
+
+    var category = button.getAttribute("data-filter");
+
+    buttons.forEach(function (btn) {
+      btn.classList.toggle("is-active", btn === button);
+    });
+
+    lists.forEach(function (list) {
+      list.querySelectorAll("[data-category]").forEach(function (row) {
+        var matches = category === "all" || row.getAttribute("data-category") === category;
+        row.style.display = matches ? "" : "none";
+      });
+    });
+  });
+})();
