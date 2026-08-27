@@ -1,0 +1,130 @@
+/*
+  AI Design LA — Community page layout
+  Page-specific layout only. Shared layout (hero, section shell,
+  gradient band, join, member/project/quote/participation/principle
+  components) lives in components.css.
+*/
+
+/* ---------- Hero: portrait mosaic ---------- */
+
+.portrait-mosaic {
+  position: relative;
+  width: 380px;
+  height: 200px;
+}
+
+.portrait-mosaic__item {
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-canvas);
+  overflow: hidden;
+}
+
+.portrait-mosaic__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait-mosaic__more {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-canvas);
+  background: var(--bg-brand);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1.25;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-primary);
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.portrait-mosaic__more:hover,
+.portrait-mosaic__more:focus-visible {
+  opacity: 0.85;
+}
+
+/* ---------- Snapshot ---------- */
+
+.section--snapshot {
+  /* Figma's one-off 120px band padding, expressed via existing tokens. */
+  padding-block: calc(var(--space-xxl) * 2);
+}
+
+.stat-grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (max-width: 900px) {
+  .section--snapshot {
+    padding-block: var(--space-xxl);
+  }
+
+  .stat-grid {
+    flex-wrap: wrap;
+    gap: var(--space-lg) 0;
+  }
+}
+
+/* ---------- Featured members ---------- */
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 60px 48px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ---------- What the community is making ---------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ---------- Community voices ---------- */
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ---------- Ways to participate ---------- */
+
+.participation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px 48px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ---------- Community principles ---------- */
+
+.principle-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+}

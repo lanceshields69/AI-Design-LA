@@ -91,7 +91,9 @@
     return;
   }
 
-  var SESSION_KEY = "adlHeroIntroPlayed";
+  // Keyed per-page so each page's hero gets its own one-per-session play
+  // instead of a single site-wide flag.
+  var SESSION_KEY = "adlHeroIntroPlayed:" + window.location.pathname;
   var alreadyPlayed = false;
 
   try {

@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community — AI Design LA</title>
+  <meta
+    name="description"
+    content="Designers, researchers, engineers, and creative technologists in Los Angeles figuring out AI together."
+  />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@500&family=Roboto+Condensed:wght@700&family=Space+Grotesk:wght@700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/community.css" />
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <!-- Compact sticky nav: hidden at page top, reveals on scroll-up -->
+  <header class="site-header" data-site-header>
+    <a class="site-header__logo" href="index.html">
+      <img src="images/logo-icon-animation.gif" alt="" width="43" height="48" />
+      <span class="site-header__logo-text">
+        <span>AI</span><span>Design</span><span>LA</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" data-site-nav aria-label="Primary">
+      <a class="site-nav__link" href="about.html">About</a>
+      <a class="site-nav__link" href="events.html">Events</a>
+      <a class="site-nav__link" href="community.html">Community</a>
+      <a class="site-nav__link" href="index.html#ideas">Ideas</a>
+      <a class="site-nav__link" href="tools.html">Tools</a>
+      <a class="site-nav__link site-nav__link--accent" href="index.html#join">Join the community</a>
+    </nav>
+
+    <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu: full-screen overlay -->
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__header">
+      <a class="mobile-menu__logo" href="index.html">
+        <img src="images/logo-icon-animation.gif" alt="" width="43" height="48" />
+        <span class="mobile-menu__logo-text">
+          <span>AI</span><span>Design</span><span>LA</span>
+        </span>
+      </a>
+      <button class="mobile-menu__close" data-mobile-close aria-label="Close menu">
+        <svg viewBox="0 0 16.5332 16" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M0.268262 0.259611C0.440253 0.0933737 0.673395 0 0.916476 0C1.15956 0 1.3927 0.0933737 1.56469 0.259611L16.2412 14.4628C16.3313 14.5441 16.4036 14.6421 16.4538 14.751C16.5039 14.8599 16.5309 14.9774 16.533 15.0966C16.5352 15.2158 16.5125 15.3342 16.4664 15.4448C16.4203 15.5553 16.3516 15.6557 16.2645 15.74C16.1774 15.8243 16.0736 15.8907 15.9594 15.9354C15.8452 15.98 15.7229 16.002 15.5997 15.9999C15.4765 15.9978 15.3551 15.9717 15.2426 15.9232C15.13 15.8746 15.0288 15.8047 14.9448 15.7175L0.268262 1.51423C0.0964852 1.34779 0 1.12216 0 0.886921C0 0.651679 0.0964852 0.426056 0.268262 0.259611Z" />
+          <path fill="currentColor" d="M16.2405 0.259611C16.4123 0.426056 16.5088 0.651679 16.5088 0.886921C16.5088 1.12216 16.4123 1.34779 16.2405 1.51423L1.564 15.7175C1.39011 15.8743 1.16012 15.9596 0.922484 15.9556C0.684845 15.9515 0.458111 15.8584 0.290049 15.6957C0.121987 15.5331 0.0257188 15.3136 0.021526 15.0837C0.0173331 14.8537 0.105543 14.6311 0.267572 14.4628L14.9441 0.259611C15.1161 0.0933737 15.3492 0 15.5923 0C15.8354 0 16.0685 0.0933737 16.2405 0.259611Z" />
+        </svg>
+      </button>
+    </div>
+
+    <nav class="mobile-menu__list" aria-label="Mobile">
+      <a class="mobile-menu__link type-heading-4" href="about.html">About</a>
+      <a class="mobile-menu__link type-heading-4" href="events.html">Events</a>
+      <a class="mobile-menu__link type-heading-4" href="community.html">Community</a>
+      <a class="mobile-menu__link type-heading-4" href="index.html#ideas">Ideas</a>
+      <a class="mobile-menu__link type-heading-4" href="tools.html">Tools</a>
+      <a class="mobile-menu__link type-heading-4" href="index.html#join">Join us</a>
+      <span class="mobile-menu__link type-heading-4">Contact</span>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero hero--page">
+      <img class="hero__image" src="images/community-hero.jpg" alt="" />
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <a class="hero__logo" href="index.html">
+        <img src="images/ADL-logo-animation.gif" alt="AI Design LA" width="150" height="167" />
+      </a>
+
+      <nav class="hero__nav" aria-label="Primary">
+        <a class="site-nav__link" href="about.html">About</a>
+        <a class="site-nav__link" href="events.html">Events</a>
+        <a class="site-nav__link" href="community.html">Community</a>
+        <a class="site-nav__link" href="index.html#ideas">Ideas</a>
+        <a class="site-nav__link" href="tools.html">Tools</a>
+        <a class="site-nav__link site-nav__link--accent" href="index.html#join">Join The community</a>
+      </nav>
+
+      <div class="portrait-mosaic">
+        <span class="portrait-mosaic__item" aria-hidden="true" style="left: 0; top: 20px;"><img src="images/portraits/portrait-1.png" alt="" /></span>
+        <span class="portrait-mosaic__item" aria-hidden="true" style="left: 88px; top: 0;"><img src="images/portraits/portrait-2.png" alt="" /></span>
+        <span class="portrait-mosaic__item" aria-hidden="true" style="left: 176px; top: 20px;"><img src="images/portraits/portrait-3.png" alt="" /></span>
+        <span class="portrait-mosaic__item" aria-hidden="true" style="left: 264px; top: 0;"><img src="images/portraits/portrait-4.png" alt="" /></span>
+        <span class="portrait-mosaic__item" aria-hidden="true" style="left: 44px; top: 104px;"><img src="images/portraits/portrait-5.png" alt="" /></span>
+        <span class="portrait-mosaic__item" aria-hidden="true" style="left: 132px; top: 84px;"><img src="images/portraits/portrait-6.jpg" alt="" /></span>
+        <span class="portrait-mosaic__item" aria-hidden="true" style="left: 220px; top: 104px;"><img src="images/portraits/portrait-7.png" alt="" /></span>
+        <a
+          class="portrait-mosaic__more"
+          href="https://www.meetup.com/ai-design-la/members/"
+          target="_blank"
+          rel="noopener"
+          aria-label="See all community members on Meetup"
+          style="left: 308px; top: 84px;"
+        >
+          +54<br />more
+        </a>
+      </div>
+
+      <div class="hero__content">
+        <h1 class="type-display hero__title" data-hero-title>The Community</h1>
+        <p class="type-body-large">
+          Designers, researchers, engineers, and creative technologists in Los Angeles — and beyond — figuring
+          out AI together. No gatekeeping. No hype. Just people doing the work.
+        </p>
+        <div class="button-row">
+          <a class="btn btn--accent" href="index.html#join">Join the Community</a>
+          <a class="btn btn--brand" href="index.html#contribute">Share Your Work</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="gradient-band" aria-hidden="true"></div>
+
+    <!-- By the numbers -->
+    <section class="section section--raised section--snapshot">
+      <div class="section__intro">
+        <h2 class="type-heading-1">By the numbers</h2>
+        <p class="type-heading-3">Real signals from a real community</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat">
+          <p class="stat__number">420+</p>
+          <p class="stat__label">Members</p>
+        </div>
+        <div class="stat">
+          <p class="stat__number">28</p>
+          <p class="stat__label">Events held</p>
+        </div>
+        <div class="stat">
+          <p class="stat__number">64</p>
+          <p class="stat__label">Projects shared</p>
+        </div>
+        <div class="stat">
+          <p class="stat__number">18</p>
+          <p class="stat__label">Talks &amp; workshops</p>
+        </div>
+        <div class="stat">
+          <p class="stat__number">40+</p>
+          <p class="stat__label">Companies represented</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured members -->
+    <section class="section section--canvas section--spacious">
+      <span class="icon" aria-hidden="true">
+        <img src="images/Icon-9.png" alt="" width="80" height="80" />
+      </span>
+
+      <h2 class="type-heading-2 rule-heading">Featured Members</h2>
+      <p class="type-body-large">
+        A few people worth knowing. Updated as the community grows. If you'd like to be featured, share your
+        work with us.
+      </p>
+
+      <div class="member-grid">
+        <article class="member-card">
+          <div class="member-card__header">
+            <img class="member-card__avatar" src="images/members/priya-nair.jpg" alt="" width="64" height="64" />
+            <div class="member-card__identity">
+              <h3 class="member-card__name">Priya Nair</h3>
+              <p class="member-card__role">Senior Product Designer</p>
+            </div>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow">Currently exploring</p>
+            <p class="member-card__text member-card__text--primary">
+              How to design trust signals for AI outputs — when should a product show its reasoning, and when
+              does that just get in the way?
+            </p>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow member-card__eyebrow--muted">One project</p>
+            <p class="member-card__text member-card__text--subtle">
+              A personal prompt library for UX research synthesis, built in Notion and iterated over six months
+              of real projects.
+            </p>
+          </div>
+          <span class="member-card__link">↗ linkedin.com/in/priyanair</span>
+        </article>
+
+        <article class="member-card">
+          <div class="member-card__header">
+            <img class="member-card__avatar" src="images/members/marcus-webb.jpg" alt="" width="64" height="64" />
+            <div class="member-card__identity">
+              <h3 class="member-card__name">Marcus Webb</h3>
+              <p class="member-card__role">Design Engineer</p>
+            </div>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow">Currently exploring</p>
+            <p class="member-card__text member-card__text--primary">
+              Whether design systems can be written in a way that LLMs actually understand — token naming
+              conventions, component specs as structured prose.
+            </p>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow member-card__eyebrow--muted">One project</p>
+            <p class="member-card__text member-card__text--subtle">
+              An open-source token schema designed to be consumed by both humans and AI code generators without
+              translation.
+            </p>
+          </div>
+          <span class="member-card__link">↗ marcuswebb.io</span>
+        </article>
+
+        <article class="member-card">
+          <div class="member-card__header">
+            <img class="member-card__avatar" src="images/members/yuna-takahashi.jpg" alt="" width="64" height="64" />
+            <div class="member-card__identity">
+              <h3 class="member-card__name">Yuna Takahashi</h3>
+              <p class="member-card__role">UX Researcher</p>
+            </div>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow">Currently exploring</p>
+            <p class="member-card__text member-card__text--primary">
+              What it means to do research when your primary tool can hallucinate. How to stay rigorous when
+              synthesis is instant.
+            </p>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow member-card__eyebrow--muted">One project</p>
+            <p class="member-card__text member-card__text--subtle">
+              A workshop format for teaching interview analysis with and without AI — run twice at LA studio
+              offsites.
+            </p>
+          </div>
+          <span class="member-card__link">↗ linkedin.com/in/yunatakahashi</span>
+        </article>
+
+        <article class="member-card">
+          <div class="member-card__header">
+            <img class="member-card__avatar" src="images/members/devon-castillo.jpg" alt="" width="64" height="64" />
+            <div class="member-card__identity">
+              <h3 class="member-card__name">Devon Castillo</h3>
+              <p class="member-card__role">Creative Director</p>
+            </div>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow">Currently exploring</p>
+            <p class="member-card__text member-card__text--primary">
+              The aesthetics of AI-generated imagery — why it all looks the same, and what happens when you
+              fight that hard enough to make something actually interesting.
+            </p>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow member-card__eyebrow--muted">One project</p>
+            <p class="member-card__text member-card__text--subtle">
+              A brand system built entirely using AI tools, documented step-by-step as a public case study.
+            </p>
+          </div>
+          <span class="member-card__link">↗ devoncastillo.co</span>
+        </article>
+
+        <article class="member-card">
+          <div class="member-card__header">
+            <img class="member-card__avatar" src="images/members/sam-okafor.jpg" alt="" width="64" height="64" />
+            <div class="member-card__identity">
+              <h3 class="member-card__name">Sam Okafor</h3>
+              <p class="member-card__role">Product Lead</p>
+            </div>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow">Currently exploring</p>
+            <p class="member-card__text member-card__text--primary">
+              How product teams should think about AI features that might be wrong — error states, graceful
+              degradation, user trust over time.
+            </p>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow member-card__eyebrow--muted">One project</p>
+            <p class="member-card__text member-card__text--subtle">
+              An internal playbook for shipping AI features responsibly, now open-sourced and adapted by three
+              other companies.
+            </p>
+          </div>
+          <span class="member-card__link">↗ linkedin.com/in/samokafor</span>
+        </article>
+
+        <article class="member-card">
+          <div class="member-card__header">
+            <img class="member-card__avatar" src="images/members/leila-ahmadi.jpg" alt="" width="64" height="64" />
+            <div class="member-card__identity">
+              <h3 class="member-card__name">Leila Ahmadi</h3>
+              <p class="member-card__role">Interaction Designer</p>
+            </div>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow">Currently exploring</p>
+            <p class="member-card__text member-card__text--primary">
+              New animation paradigms for AI interfaces — how motion changes when the content is
+              non-deterministic and the timing is unpredictable.
+            </p>
+          </div>
+          <div class="member-card__field">
+            <p class="member-card__eyebrow member-card__eyebrow--muted">One project</p>
+            <p class="member-card__text member-card__text--subtle">
+              A Figma plugin for prototyping streaming UI states, shared publicly and downloaded 800 times in
+              its first month.
+            </p>
+          </div>
+          <span class="member-card__link">↗ leilaahmadi.design</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- What the community is making -->
+    <section class="section section--canvas-vivid section--spacious">
+      <span class="icon" aria-hidden="true">
+        <img src="images/Icon-10.png" alt="" width="80" height="80" />
+      </span>
+
+      <div class="section__intro">
+        <h2 class="type-heading-1">What the community is making</h2>
+        <p class="type-heading-3">Prototypes, workflows, experiments, and things worth sharing</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-card__media">
+            <img class="project-card__image" src="images/projects/ai-workflow.jpg" alt="" />
+            <span class="project-card__badge">AI Workflow</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Research synthesis in 20 minutes</h3>
+            <p class="project-card__author">Yuna Takahashi</p>
+            <div class="project-card__takeaway">
+              <p class="project-card__takeaway-label">Key takeaway</p>
+              <p class="project-card__takeaway-text">
+                Claude + structured interview notes + a reusable prompt template. The analysis still requires a
+                human, but the first pass takes minutes, not days.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__media">
+            <img class="project-card__image" src="images/projects/design-system.jpg" alt="" />
+            <span class="project-card__badge">Design System</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Token schema for LLM consumption</h3>
+            <p class="project-card__author">Marcus Webb</p>
+            <div class="project-card__takeaway">
+              <p class="project-card__takeaway-label">Key takeaway</p>
+              <p class="project-card__takeaway-text">
+                Naming conventions and structured metadata that let AI code generators produce on-brand
+                components without a designer reviewing every output.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__media">
+            <img class="project-card__image" src="images/projects/prototype.jpg" alt="" />
+            <span class="project-card__badge">Prototype</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Streaming UI states in Figma</h3>
+            <p class="project-card__author">Leila Ahmadi</p>
+            <div class="project-card__takeaway">
+              <p class="project-card__takeaway-label">Key takeaway</p>
+              <p class="project-card__takeaway-text">
+                A plugin for prototyping non-deterministic loading states — the kind you get from streaming LLM
+                responses. Available free on the Figma community.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__media">
+            <img class="project-card__image" src="images/projects/research.jpg" alt="" />
+            <span class="project-card__badge">Research</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">When AI transparency backfires</h3>
+            <p class="project-card__author">Priya Nair</p>
+            <div class="project-card__takeaway">
+              <p class="project-card__takeaway-label">Key takeaway</p>
+              <p class="project-card__takeaway-text">
+                Three rounds of user testing on explaining AI reasoning in product UI. Short finding: showing the
+                "why" helps at first and starts to erode trust if overused.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__media">
+            <img class="project-card__image" src="images/projects/case-study.jpg" alt="" />
+            <span class="project-card__badge">Case Study</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">A brand built with AI tools</h3>
+            <p class="project-card__author">Devon Castillo</p>
+            <div class="project-card__takeaway">
+              <p class="project-card__takeaway-label">Key takeaway</p>
+              <p class="project-card__takeaway-text">
+                Full brand identity for a real client, documented step-by-step. Every tool used, every prompt
+                that worked, and the three directions that were complete dead ends.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__media">
+            <img class="project-card__image" src="images/projects/design-system.jpg" alt="" />
+            <span class="project-card__badge">Playbook</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Shipping AI features responsibly</h3>
+            <p class="project-card__author">Sam Okafor</p>
+            <div class="project-card__takeaway">
+              <p class="project-card__takeaway-label">Key takeaway</p>
+              <p class="project-card__takeaway-text">
+                What to do when the feature might be wrong — error states, fallbacks, user communication.
+                Open-sourced and now used by multiple product teams.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <a class="btn btn--accent" href="index.html#contribute">Share Your Work</a>
+    </section>
+
+    <!-- Community voices -->
+    <section class="section section--canvas section--spacious">
+      <span class="icon" aria-hidden="true">
+        <img src="images/Icon-8.png" alt="" width="80" height="80" />
+      </span>
+
+      <div class="section__intro">
+        <h2 class="type-heading-1">Community Voices</h2>
+        <p class="type-heading-3">Real answers to real questions — not testimonials</p>
+      </div>
+
+      <div class="quote-grid">
+        <article class="quote-card">
+          <p class="quote-card__question">What has AI changed about how you work?</p>
+          <p class="quote-card__quote">
+            "I stopped treating the first draft as sacred. AI makes it so cheap to get a rough version that you
+            spend almost all your time on the part that actually matters — the judgment call."
+          </p>
+          <div class="quote-card__author">
+            <img class="quote-card__avatar" src="images/members/priya-nair.jpg" alt="" width="48" height="48" />
+            <div class="quote-card__identity">
+              <p class="quote-card__name">Priya Nair</p>
+              <p class="quote-card__role">Senior Product Designer</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="quote-card">
+          <p class="quote-card__question">What are you still skeptical about?</p>
+          <p class="quote-card__quote">
+            "The idea that AI makes everyone a designer. It makes everyone able to produce something that looks
+            designed. That's not the same thing, and I think we'll spend years untangling the difference."
+          </p>
+          <div class="quote-card__author">
+            <img class="quote-card__avatar" src="images/members/marcus-webb.jpg" alt="" width="48" height="48" />
+            <div class="quote-card__identity">
+              <p class="quote-card__name">Marcus Webb</p>
+              <p class="quote-card__role">Design Engineer</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="quote-card">
+          <p class="quote-card__question">What are you trying to learn next?</p>
+          <p class="quote-card__quote">
+            "How to do research on AI products when the AI itself changes between studies. Every time a model
+            updates, you're not quite studying the same thing. Nobody has figured this out yet."
+          </p>
+          <div class="quote-card__author">
+            <img class="quote-card__avatar" src="images/members/yuna-takahashi.jpg" alt="" width="48" height="48" />
+            <div class="quote-card__identity">
+              <p class="quote-card__name">Yuna Takahashi</p>
+              <p class="quote-card__role">UX Researcher</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="quote-card">
+          <p class="quote-card__question">What should designers be paying more attention to?</p>
+          <p class="quote-card__quote">
+            "Error states. Every AI feature fails differently, and most of us are shipping products where
+            failure is a common path, not an edge case. We're not designing for that seriously enough."
+          </p>
+          <div class="quote-card__author">
+            <img class="quote-card__avatar" src="images/members/sam-okafor.jpg" alt="" width="48" height="48" />
+            <div class="quote-card__identity">
+              <p class="quote-card__name">Sam Okafor</p>
+              <p class="quote-card__role">Product Lead</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Ways to participate -->
+    <section class="section section--raised section--spacious">
+      <span class="icon" aria-hidden="true">
+        <img src="images/Icon-13.png" alt="" width="80" height="80" />
+      </span>
+
+      <div class="section__intro">
+        <h2 class="type-heading-1">Ways to participate</h2>
+        <p class="type-heading-3">Four clear paths into the community</p>
+      </div>
+
+      <div class="participation-grid">
+        <article class="participation-card">
+          <p class="participation-card__label">Attend</p>
+          <p class="participation-card__title">Come to a meetup, workshop, or show-and-tell</p>
+          <p class="participation-card__body">
+            Events happen monthly across Los Angeles. No experience with AI required — curiosity is enough.
+            RSVP on Meetup and show up.
+          </p>
+          <a class="btn btn--accent btn--small" href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">
+            RSVP on Meetup
+          </a>
+        </article>
+
+        <article class="participation-card">
+          <p class="participation-card__label">Share</p>
+          <p class="participation-card__title">Submit a project, experiment, or lesson learned</p>
+          <p class="participation-card__body">
+            Work in progress is welcome. Case studies, failed experiments, prompt libraries, tools you built —
+            if it's real and you learned something, it belongs here.
+          </p>
+          <a class="btn btn--brand btn--small" href="index.html#contribute">Share your work</a>
+        </article>
+
+        <article class="participation-card">
+          <p class="participation-card__label">Lead</p>
+          <p class="participation-card__title">Propose a talk, facilitate a discussion, or host a workshop</p>
+          <p class="participation-card__body">
+            We're practitioner-led. If you have something specific to teach or a question worth exploring
+            together in a room, reach out and we'll build an event around it.
+          </p>
+          <a class="btn btn--brand btn--small" href="index.html#contribute">Propose a Talk</a>
+        </article>
+
+        <article class="participation-card">
+          <p class="participation-card__label">Help</p>
+          <p class="participation-card__title">Volunteer, sponsor, photograph events, or help organize</p>
+          <p class="participation-card__body">
+            The community runs on people who show up twice. If you want to be more involved — logistics,
+            outreach, documentation, sponsorship — we have a spot for you.
+          </p>
+          <a class="btn btn--brand btn--small" href="index.html#contribute">Get Involved</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Community principles -->
+    <section class="section section--canvas section--spacious">
+      <span class="icon" aria-hidden="true">
+        <img src="images/Icon-14.png" alt="" width="80" height="80" />
+      </span>
+
+      <div class="section__intro">
+        <h2 class="type-heading-1">Community Principles</h2>
+        <p class="type-heading-3">How we treat each other and why it matters</p>
+      </div>
+
+      <div class="principle-list">
+        <div class="principle-row">
+          <p class="principle-row__index">01</p>
+          <div class="principle-row__body">
+            <h3 class="principle-row__title">Be respectful</h3>
+            <p class="principle-row__text">Treat everyone with kindness and professionalism. Debate ideas, not people.</p>
+          </div>
+        </div>
+        <div class="principle-row">
+          <p class="principle-row__index">02</p>
+          <div class="principle-row__body">
+            <h3 class="principle-row__title">Share generously</h3>
+            <p class="principle-row__text">
+              Post your work, experiments, workflows, tools, and lessons learned. We all benefit when people
+              contribute.
+            </p>
+          </div>
+        </div>
+        <div class="principle-row">
+          <p class="principle-row__index">03</p>
+          <div class="principle-row__body">
+            <h3 class="principle-row__title">Stay curious</h3>
+            <p class="principle-row__text">
+              Everyone is at a different stage with AI. Ask questions, share knowledge, and help others learn.
+            </p>
+          </div>
+        </div>
+        <div class="principle-row">
+          <p class="principle-row__index">04</p>
+          <div class="principle-row__body">
+            <h3 class="principle-row__title">Keep it relevant</h3>
+            <p class="principle-row__text">
+              Focus discussions on AI, design, product development, UX, research, engineering, and related
+              topics.
+            </p>
+          </div>
+        </div>
+        <div class="principle-row">
+          <p class="principle-row__index">05</p>
+          <div class="principle-row__body">
+            <h3 class="principle-row__title">Respect confidentiality</h3>
+            <p class="principle-row__text">
+              Don't share confidential information from your employer, clients, or unreleased products.
+            </p>
+          </div>
+        </div>
+        <div class="principle-row">
+          <p class="principle-row__index">06</p>
+          <div class="principle-row__body">
+            <h3 class="principle-row__title">Keep promotion balanced</h3>
+            <p class="principle-row__text">
+              Sharing your projects, events, and tools is welcome when it's relevant and contributes to the
+              community. Avoid spam or excessive self-promotion.
+            </p>
+          </div>
+        </div>
+        <div class="principle-row">
+          <p class="principle-row__index">07</p>
+          <div class="principle-row__body">
+            <h3 class="principle-row__title">Help build a great community</h3>
+            <p class="principle-row__text">
+              Be welcoming, inclusive, and collaborative. The culture of this group is something we create
+              together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join us -->
+    <section class="section join" id="join">
+      <img class="join__image" src="images/join-image.jpg" alt="" />
+      <div class="join__scrim" aria-hidden="true"></div>
+
+      <span class="icon" aria-hidden="true">
+        <img src="images/Icon-6.png" alt="" width="80" height="80" />
+      </span>
+
+      <div class="section__intro">
+        <h2 class="type-heading-1">Join AI Design LA</h2>
+        <p class="type-body-large">
+          Meet designers, builders, researchers, and creative technologists exploring how AI is changing design
+          practice.
+        </p>
+      </div>
+
+      <div class="join__actions">
+        <a class="btn btn--accent" href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">
+          Join us on Meetup.com
+        </a>
+        <a
+          class="btn btn--brand"
+          href="https://join.slack.com/t/aidesignla/shared_invite/zt-463ey9es3-E1GQ32V9WsWTPpd9auVw3w"
+          target="_blank"
+          rel="noopener"
+        >
+          Conversation on Slack
+        </a>
+        <a class="btn btn--brand" href="#contribute">Contribute</a>
+      </div>
+    </section>
+
+    <div class="gradient-band" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <hr class="site-footer__rule" />
+
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <p class="site-footer__brand-name">
+          <img src="images/logo-icon-animation.gif" alt="" width="30" height="33" />
+          <span>AI Design LA</span>
+        </p>
+        <p class="site-footer__brand-copy">
+          A community for designers shaping how AI products are imagined, designed, and built in Los Angeles.
+        </p>
+        <div class="site-footer__brand-links">
+          <a class="btn btn--accent btn--small" href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">
+            Attend on Meetup
+          </a>
+          <a
+            class="btn btn--brand btn--small"
+            href="https://join.slack.com/t/aidesignla/shared_invite/zt-463ey9es3-E1GQ32V9WsWTPpd9auVw3w"
+            target="_blank"
+            rel="noopener"
+          >
+            Discuss on Slack
+          </a>
+          <a class="btn btn--brand btn--small" href="#">Read on Substack</a>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Explore</p>
+        <nav class="site-footer__col-links" aria-label="Explore">
+          <a href="events.html">Events</a>
+          <a href="community.html">Community</a>
+          <a href="index.html#ideas">Ideas</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Join</p>
+        <nav class="site-footer__col-links" aria-label="Join">
+          <a href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">RSVP on Meetup</a>
+          <a
+            href="https://join.slack.com/t/aidesignla/shared_invite/zt-463ey9es3-E1GQ32V9WsWTPpd9auVw3w"
+            target="_blank"
+            rel="noopener"
+          >
+            Join the Slack
+          </a>
+          <span>Subscribe on Substack</span>
+          <a href="index.html#contribute">Get involved</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Follow</p>
+        <nav class="site-footer__col-links" aria-label="Follow">
+          <a href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">Meetup</a>
+          <a href="https://www.linkedin.com/company/ai-design-la/" target="_blank" rel="noopener">LinkedIn</a>
+          <span>Instagram</span>
+          <span>Substack</span>
+        </nav>
+      </div>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Community</p>
+        <nav class="site-footer__col-links" aria-label="Community" id="contribute">
+          <span>Contact</span>
+          <a href="#">Community guidelines</a>
+          <a href="#">Propose a talk</a>
+          <a href="#">Share a project</a>
+          <a href="#">Sponsorship</a>
+        </nav>
+      </div>
+    </div>
+
+    <hr class="site-footer__rule" />
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__tagline">Made by designers in Los Angeles for whatever comes next.</p>
+      <div class="site-footer__legal">
+        <span>© 2026 AI Design LA</span>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
