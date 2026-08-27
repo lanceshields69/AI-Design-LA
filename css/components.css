@@ -838,6 +838,27 @@
   text-align: left;
 }
 
+.team-card__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.team-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.team-card__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .team-card__name {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -870,6 +891,11 @@
   line-height: var(--line-height-body-medium);
   letter-spacing: var(--tracking-body);
   color: var(--text-brand);
+}
+
+.team-card__link:hover,
+.team-card__link:focus-visible {
+  text-decoration: underline;
 }
 
 /* ---------- Card: value ---------- */
