@@ -1,0 +1,56 @@
+/*
+  AI Design LA — Ideas page layout
+  Page-specific layout only. Shared layout (hero, section shell,
+  gradient band, join, filter-bar, featured-article/article-card
+  components) lives in components.css.
+*/
+
+.ideas-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.editorial-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.editorial-row {
+  display: grid;
+  gap: var(--space-lg);
+  width: 100%;
+  padding-top: var(--space-xl);
+  margin-top: var(--space-xl);
+  border-top: 1px dashed var(--border-rule);
+}
+
+.editorial-row:first-child {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: none;
+}
+
+.editorial-row--split {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.editorial-row--triple {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .ideas-list {
+    max-width: 100%;
+  }
+
+  .editorial-row--split,
+  .editorial-row--triple {
+    grid-template-columns: 1fr;
+  }
+}

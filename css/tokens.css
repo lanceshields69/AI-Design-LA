@@ -13,7 +13,16 @@
   --bg-raised: #eaeaea;
   --bg-brand: #5a58db;
   --bg-accent: #ff383c;
+  --bg-accent-hover: #ff5e62;
   --bg-white: #ffffff;
+
+  /* ---------- Color: idea category tags ---------- */
+  /* Workflow/Research/Video reuse --gradient-brand's own stops as flat
+     colors, so every category tag stays inside the brand palette. */
+  --tag-case-study: var(--bg-accent-hover);
+  --tag-workflow: #008eaf;
+  --tag-research: #a173a9;
+  --tag-video: #df618f;
 
   /* ---------- Color: text ---------- */
   --text-primary: #ffffff;

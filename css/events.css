@@ -1,7 +1,8 @@
 /*
   AI Design LA — Events page layout
   Page-specific layout only. Shared layout (hero, section shell,
-  gradient band, join, event-row/tag components) lives in components.css.
+  gradient band, join, filter-bar, event-row/tag components) lives in
+  components.css.
 */
 
 .event-list {
@@ -12,13 +13,6 @@
   width: 100%;
   max-width: 1200px;
   text-align: left;
-}
-
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-xs);
 }
 
 .event-group {
