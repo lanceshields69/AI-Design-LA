@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ideas — AI Design LA</title>
+  <title>Tools — AI Design LA</title>
   <meta
     name="description"
-    content="Essays, workflows, case studies, and conversations from the AI Design LA community."
+    content="A practical, opinionated guide to the AI tools shaping how designers research, create, prototype, and build."
   />
   <link rel="icon" href="images/favicon.png" type="image/png" />
 
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/ideas.css" />
+  <link rel="stylesheet" href="css/tools.css" />
 </head>
 <body>
   <a class="visually-hidden" href="#main">Skip to content</a>
@@ -81,7 +81,7 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero hero--page">
-      <img class="hero__image" src="images/ideas-hero.jpg" alt="" />
+      <img class="hero__image" src="images/tools-hero.jpg" alt="" />
       <div class="hero__scrim" aria-hidden="true"></div>
 
       <a class="hero__logo" href="index.html">
@@ -98,72 +98,103 @@
       </nav>
 
       <div class="hero__content">
-        <h1 class="type-display hero__title" data-hero-title>Ideas</h1>
+        <p class="type-label-medium eyebrow-label">Community Field Guide</p>
+        <h1 class="type-display hero__title" data-hero-title>Tools We Use</h1>
         <p class="type-body-large">
-          Essays, workflows, case studies, and conversations from the AI Design LA community. Honest writing
-          from people doing the work — published on Substack and here.
+          A practical, opinionated guide to the AI tools shaping how designers research, create, prototype, and
+          build.
         </p>
+        <p class="type-body-medium tools-hero__subtext">
+          Tested by people doing the work. Updated as the tools and our opinions change.
+        </p>
+        <div class="button-row">
+          <a class="btn btn--accent" href="contact.html#suggesting-a-tool">Suggest a Tool</a>
+          <a class="type-label-medium tools-graveyard-link" href="#graveyard">Jump to the Graveyard ↓</a>
+        </div>
       </div>
     </section>
 
     <div class="gradient-band" aria-hidden="true"></div>
 
-    <!-- Featured article: content lives in js/ideas-data.js, rendered by js/ideas.js -->
-    <article class="featured-article" data-featured-article></article>
-
-    <!-- All ideas -->
+    <!-- Why this list exists -->
     <section class="section section--raised section--spacious">
-      <h2 class="type-heading-2 rule-heading">All ideas</h2>
+      <span class="icon icon--on-light" aria-hidden="true">
+        <img src="images/Icon-15.svg" alt="" width="80" height="80" />
+      </span>
 
-      <div class="ideas-list">
-        <div class="filter-bar" data-filter-bar>
-          <button type="button" class="btn btn--accent btn--small is-active" data-filter="all">All</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="essay">Essay</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="case-study">Case Study</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="workflow">Workflow</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="research">Research</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="video">Video</button>
+      <p class="type-label-medium eyebrow-label">Why This List Exists</p>
+
+      <div class="section__eyebrow">
+        <h2 class="type-heading-1">The useful tools earn their place</h2>
+        <p class="type-heading-3">Not everything is worth your attention</p>
+      </div>
+
+      <div class="section__intro">
+        <p class="type-body-large">
+          New AI tools appear every week. Most do not deserve a permanent place in a designer's workflow. This is
+          a deliberately selective list of products that members of the AI Design LA community have used enough
+          to form an honest point of view about.
+        </p>
+      </div>
+
+      <p class="type-label-small tools-intro__meta">Last reviewed: August 2026</p>
+    </section>
+
+    <!-- What the labels mean -->
+    <section class="section section--canvas">
+      <p class="type-label-medium eyebrow-label">How We Classify Them</p>
+      <h2 class="type-heading-1">What the labels mean</h2>
+
+      <div class="status-legend">
+        <div class="status-legend__item">
+          <span class="tag tag--solid-accent">Core Stack</span>
+          <p class="type-body-large">Tools people regularly depend on. Tested across enough real projects to trust.</p>
         </div>
-
-        <div class="editorial-grid" data-filter-list data-editorial-grid></div>
-
-        <div class="button-row">
-          <a class="btn btn--accent" href="https://aidesignla.substack.com/" target="_blank" rel="noopener">Read Everything on Substack ↗</a>
+        <div class="status-legend__item">
+          <span class="tag tag--solid-brand">In Rotation</span>
+          <p class="type-body-large">Useful for particular workflows, projects, or moments — but not every one.</p>
+        </div>
+        <div class="status-legend__item">
+          <span class="tag tag--solid-workflow">Watching</span>
+          <p class="type-body-large">Promising, but not yet proven enough for regular use. Worth keeping an eye on.</p>
+        </div>
+        <div class="status-legend__item">
+          <span class="tag tag--solid-dropped">Dropped</span>
+          <p class="type-body-large">Tools that were replaced, declined, or created more friction than value.</p>
         </div>
       </div>
     </section>
 
-    <!-- Join us -->
-    <section class="section join" id="join">
-      <img class="join__image" src="images/join-image.jpg" alt="" />
-      <div class="join__scrim" aria-hidden="true"></div>
+    <!-- Category jump nav -->
+    <section class="section">
+      <div class="section__intro">
+        <p class="type-label-medium eyebrow-label">Currently in the mix</p>
+        <h2 class="type-heading-1">The toolkit</h2>
+        <p class="type-body-large">Browse the tools our community is using across the design process.</p>
+      </div>
 
-      <span class="icon" aria-hidden="true">
-        <img src="images/Icon-6.png" alt="" width="80" height="80" />
+      <nav class="category-nav" data-category-nav aria-label="Categories"></nav>
+    </section>
+
+    <!-- Category sections: rendered from js/tools-data.js by js/tools.js -->
+    <div data-category-sections></div>
+
+    <!-- The Tool Graveyard -->
+    <section class="section section--canvas-vivid" id="graveyard">
+      <span class="icon icon--on-dark" aria-hidden="true">
+        <img src="images/Icon-16.svg" alt="" width="80" height="80" />
       </span>
 
-      <div class="section__intro">
-        <h2 class="type-heading-1">Join AI Design LA</h2>
+      <div class="section__intro graveyard-intro">
+        <p class="type-heading-4 graveyard-eyebrow">The Tool Graveyard</p>
+        <h2 class="type-heading-1">What we tried and left behind</h2>
         <p class="type-body-large">
-          Meet designers, builders, researchers, and creative technologists exploring how AI is changing design
-          practice.
+          Some tools are replaced. Some stop improving. Others create more work than they save. These are the
+          ones we stopped reaching for and why.
         </p>
       </div>
 
-      <div class="join__actions">
-        <a class="btn btn--accent" href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">
-          Join us on Meetup.com
-        </a>
-        <a
-          class="btn btn--brand"
-          href="https://join.slack.com/t/aidesignla/shared_invite/zt-463ey9es3-E1GQ32V9WsWTPpd9auVw3w"
-          target="_blank"
-          rel="noopener"
-        >
-          Conversation on Slack
-        </a>
-        <a class="btn btn--brand" href="contact.html">Contribute</a>
-      </div>
+      <div class="graveyard-list" data-graveyard-rows></div>
     </section>
 
     <div class="gradient-band" aria-hidden="true"></div>
@@ -256,8 +287,8 @@
     </div>
   </footer>
 
-  <script src="js/ideas-data.js"></script>
-  <script src="js/ideas.js"></script>
+  <script src="js/tools-data.js"></script>
+  <script src="js/tools.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,288 @@
+/*
+  AI Design LA — Tools page
+  Layout only. Shared components (hero, section shell, tag, btn,
+  rule-heading) live in components.css.
+*/
+
+/* ---------- Hero ---------- */
+
+.tools-hero__subtext {
+  color: var(--text-subtle);
+}
+
+.tools-graveyard-link {
+  color: var(--text-brand-bright);
+}
+
+/* ---------- Introduction ---------- */
+
+.tools-intro__meta {
+  color: var(--text-brand);
+}
+
+/* ---------- Status legend ---------- */
+
+.status-legend {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(122, 121, 219, 0.4);
+}
+
+.status-legend__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--bg-canvas);
+}
+
+@media (max-width: 900px) {
+  .status-legend {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Category jump nav ---------- */
+
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+/* ---------- Category section ---------- */
+
+.category-section {
+  width: 100%;
+  padding: 120px var(--space-xxl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xxl);
+}
+
+.category-section--white {
+  background: var(--bg-white);
+  color: var(--text-reversed);
+}
+
+.category-section--raised {
+  background: var(--bg-raised);
+  color: var(--text-reversed);
+}
+
+.category-section__title {
+  max-width: 1200px;
+}
+
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ---------- Tool row ---------- */
+
+.tool-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-lg) 60px;
+  width: 100%;
+  padding-top: var(--space-lg);
+  border-top: 1px dashed var(--border-rule);
+}
+
+.tool-row__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--size-heading-3);
+  line-height: var(--line-height-heading-3);
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+}
+
+.tool-row__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xxs);
+  margin-top: var(--space-sm);
+}
+
+.tool-row__category {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.tool-row__link {
+  display: block;
+  margin-top: var(--space-xxs);
+  padding-top: var(--space-xxs);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
+
+.tool-row__contributor {
+  margin-top: var(--space-xxs);
+  padding-top: var(--space-xxs);
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-body-small);
+  color: var(--text-muted);
+}
+
+.tool-row__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.tool-row__description {
+  font-size: var(--size-body-large);
+  line-height: var(--line-height-body-large);
+  letter-spacing: var(--tracking-body);
+}
+
+.tool-row__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.tool-row__field-label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
+
+.tool-row__field--take {
+  padding-top: 20px;
+  border-top: 1px dashed var(--border-rule);
+}
+
+.tool-row__field--take .tool-row__field-label {
+  color: var(--text-accent);
+}
+
+.tool-row__field-text {
+  font-size: var(--size-body-medium);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--tracking-body);
+}
+
+.tool-row__field--take .tool-row__field-text {
+  color: #444;
+}
+
+/* ---------- Tool graveyard ---------- */
+
+.graveyard-eyebrow {
+  color: var(--text-accent);
+}
+
+.graveyard-intro {
+  max-width: 900px;
+}
+
+.graveyard-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.graveyard-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-xs) 60px;
+  width: 100%;
+  padding-top: 28px;
+  border-top: 1px dashed rgba(122, 121, 219, 0.35);
+}
+
+.graveyard-row__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--size-heading-4);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.graveyard-row__label {
+  margin-top: var(--space-xxs);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+}
+
+.graveyard-row__col-name .graveyard-row__label {
+  color: var(--text-brand-light);
+}
+
+.graveyard-row__body .graveyard-row__label {
+  color: var(--text-subtle);
+}
+
+.graveyard-row__replaced-by {
+  margin-top: var(--space-xxxs);
+  font-size: var(--size-body-small);
+  letter-spacing: var(--tracking-body-small);
+  color: var(--text-subtle);
+}
+
+.graveyard-row__former-use {
+  margin-top: var(--space-xxs);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--size-heading-4);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.graveyard-row__description {
+  margin-top: var(--space-xs);
+  font-size: var(--size-body-medium);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--tracking-body);
+  color: var(--text-subtle);
+}
+
+@media (max-width: 900px) {
+  .graveyard-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 900px) {
+  .tool-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}

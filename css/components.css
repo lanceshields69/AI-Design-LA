@@ -55,6 +55,20 @@
   background: var(--bg-accent);
 }
 
+.btn--outline {
+  background: transparent;
+  border: 1px dashed var(--border-button);
+  color: var(--text-reversed);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: var(--bg-brand);
+  border-style: solid;
+  color: var(--text-primary);
+  opacity: 1;
+}
+
 /* ---------- Site nav ---------- */
 
 .site-header {
@@ -519,6 +533,12 @@
   text-transform: uppercase;
 }
 
+/* Small accent label sitting above a heading — combine with
+   .type-label-medium, e.g. <p class="type-label-medium eyebrow-label"> */
+.eyebrow-label {
+  color: var(--text-accent);
+}
+
 .section__body {
   display: flex;
   flex-direction: column;
@@ -576,6 +596,12 @@
   inset: 0;
   background: var(--overlay-scrim);
   z-index: -1;
+}
+
+/* 20 percentage points darker than the default scrim — Figma spec for the
+   home/about/events Join panels specifically (rgba(0,0,0,0.4) vs 0.2). */
+.join__scrim--dark {
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .join__actions {
@@ -792,64 +818,12 @@
   height: auto;
 }
 
-.partner-card__lockup {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  min-width: 0;
+.partner-card__mark--wide {
+  width: 425px;
 }
 
-.partner-card__logo {
-  width: 75px;
-  height: 75px;
-  border-radius: var(--radius-sm);
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.partner-card__wordmark {
-  font-family: "Outfit", var(--font-heading);
-  font-weight: 500;
-  font-size: clamp(28px, 4.4vw, 64px);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  color: var(--text-reversed);
-  white-space: nowrap;
-}
-
-.partner-card__lockup .partner-card__wordmark {
-  font-size: clamp(20px, 2.8vw, 40px);
-}
-
-.partner-card__wordmark--neochrome {
-  font-family: "Roboto Condensed", var(--font-heading);
-  font-weight: 700;
-  font-size: clamp(30px, 4.6vw, 66px);
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-}
-
-.partner-card__wordmark--flicker {
-  animation: partner-wordmark-flicker 2s linear infinite;
-}
-
-@keyframes partner-wordmark-flicker {
-  0% {
-    opacity: 0;
-  }
-  58.45% {
-    opacity: 0;
-    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-  }
-  86.2% {
-    opacity: 1;
-  }
-  99.9% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.partner-card__mark--neochrome {
+  width: 320px;
 }
 
 .partner-card__link {
@@ -882,13 +856,6 @@
     height: auto;
     min-height: 180px;
     padding: var(--space-lg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .partner-card__wordmark--flicker {
-    animation: none;
-    opacity: 1;
   }
 }
 
@@ -1068,6 +1035,10 @@
 
 .tag--solid-video {
   background: var(--tag-video);
+}
+
+.tag--solid-dropped {
+  background: var(--tag-dropped);
 }
 
 .tag--outline {
@@ -2028,4 +1999,26 @@
     flex-direction: column;
     gap: var(--space-lg);
   }
+}
+
+/* ---------- Form ---------- */
+
+.form-honeypot {
+  display: none;
+}
+
+.form__status {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--size-body-medium);
+}
+
+.form__status--success {
+  background: rgba(90, 88, 219, 0.15);
+  border: 1px dashed var(--border-rule);
+}
+
+.form__status--error {
+  background: rgba(255, 56, 60, 0.15);
+  border: 1px dashed var(--bg-accent);
 }

@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ideas — AI Design LA</title>
+  <title>Contact — AI Design LA</title>
   <meta
     name="description"
-    content="Essays, workflows, case studies, and conversations from the AI Design LA community."
+    content="Propose a talk, share a project, discuss sponsorship, or just reach out. We read every message."
   />
   <link rel="icon" href="images/favicon.png" type="image/png" />
 
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/ideas.css" />
+  <link rel="stylesheet" href="css/contact.css" />
 </head>
 <body>
   <a class="visually-hidden" href="#main">Skip to content</a>
@@ -81,7 +81,7 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero hero--page">
-      <img class="hero__image" src="images/ideas-hero.jpg" alt="" />
+      <img class="hero__image" src="images/contact-hero.jpg" alt="" />
       <div class="hero__scrim" aria-hidden="true"></div>
 
       <a class="hero__logo" href="index.html">
@@ -98,71 +98,152 @@
       </nav>
 
       <div class="hero__content">
-        <h1 class="type-display hero__title" data-hero-title>Ideas</h1>
-        <p class="type-body-large">
-          Essays, workflows, case studies, and conversations from the AI Design LA community. Honest writing
-          from people doing the work — published on Substack and here.
+        <h1 class="type-display hero__title" data-hero-title>Contact Us</h1>
+        <p class="type-body-large contact-hero__subtext">
+          Propose a talk, share a project, discuss sponsorship, or just reach out. We read every message.
         </p>
       </div>
     </section>
 
     <div class="gradient-band" aria-hidden="true"></div>
 
-    <!-- Featured article: content lives in js/ideas-data.js, rendered by js/ideas.js -->
-    <article class="featured-article" data-featured-article></article>
+    <div data-form-shell>
+      <form data-formspree-form action="https://formspree.io/f/xwlkkzoj" method="POST">
+        <input type="hidden" name="_subject" value="AI Design LA: Contact form" />
+        <input class="form-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
 
-    <!-- All ideas -->
-    <section class="section section--raised section--spacious">
-      <h2 class="type-heading-2 rule-heading">All ideas</h2>
+        <!-- Step 1: reason -->
+        <div class="contact-section contact-section--white">
+          <div class="contact-step">
+            <p class="type-label-medium contact-step__eyebrow">Step 1 of 3</p>
+            <h2 class="type-heading-2 contact-step__title">
+              What are you contacting us about? <span class="required-asterisk">*</span>
+            </h2>
 
-      <div class="ideas-list">
-        <div class="filter-bar" data-filter-bar>
-          <button type="button" class="btn btn--accent btn--small is-active" data-filter="all">All</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="essay">Essay</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="case-study">Case Study</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="workflow">Workflow</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="research">Research</button>
-          <button type="button" class="btn btn--brand btn--small" data-filter="video">Video</button>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input class="radio-option__input" type="radio" name="reason" value="propose-a-talk" required />
+                <span class="radio-option__dot" aria-hidden="true"></span>
+                <span class="radio-option__label">Propose a talk</span>
+              </label>
+              <label class="radio-option">
+                <input class="radio-option__input" type="radio" name="reason" value="share-a-project" />
+                <span class="radio-option__dot" aria-hidden="true"></span>
+                <span class="radio-option__label">Share a project</span>
+              </label>
+              <label class="radio-option">
+                <input class="radio-option__input" type="radio" name="reason" value="sponsorship" />
+                <span class="radio-option__dot" aria-hidden="true"></span>
+                <span class="radio-option__label">Sponsorship</span>
+              </label>
+              <label class="radio-option">
+                <input class="radio-option__input" type="radio" name="reason" value="suggesting-a-tool" />
+                <span class="radio-option__dot" aria-hidden="true"></span>
+                <span class="radio-option__label">Suggesting a tool</span>
+              </label>
+              <label class="radio-option">
+                <input class="radio-option__input" type="radio" name="reason" value="contact" />
+                <span class="radio-option__dot" aria-hidden="true"></span>
+                <span class="radio-option__label">Contact</span>
+              </label>
+              <label class="radio-option">
+                <input class="radio-option__input" type="radio" name="reason" value="other" />
+                <span class="radio-option__dot" aria-hidden="true"></span>
+                <span class="radio-option__label">Other</span>
+              </label>
+            </div>
+          </div>
         </div>
 
-        <div class="editorial-grid" data-filter-list data-editorial-grid></div>
+        <!-- Step 2: message -->
+        <div class="contact-section contact-section--raised">
+          <div class="contact-step">
+            <p class="type-label-medium contact-step__eyebrow">Step 2 of 3</p>
+            <h2 class="type-heading-2 contact-step__title">Tell us more</h2>
 
-        <div class="button-row">
-          <a class="btn btn--accent" href="https://aidesignla.substack.com/" target="_blank" rel="noopener">Read Everything on Substack ↗</a>
+            <div class="field-row">
+              <label class="field-label" for="contact-message">Your message <span class="required-asterisk">*</span></label>
+              <textarea
+                class="field-textarea"
+                id="contact-message"
+                name="message"
+                placeholder="Your message…"
+                required
+              ></textarea>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Join us -->
-    <section class="section join" id="join">
-      <img class="join__image" src="images/join-image.jpg" alt="" />
-      <div class="join__scrim" aria-hidden="true"></div>
+        <!-- Step 3: details -->
+        <div class="contact-section contact-section--white">
+          <div class="contact-step">
+            <p class="type-label-medium contact-step__eyebrow">Step 3 of 3</p>
+            <h2 class="type-heading-2 contact-step__title">Your details</h2>
 
-      <span class="icon" aria-hidden="true">
-        <img src="images/Icon-6.png" alt="" width="80" height="80" />
-      </span>
+            <div class="field-grid">
+              <div>
+                <label class="field-label" for="contact-name">Name <span class="required-asterisk">*</span></label>
+                <input class="field-underline" type="text" id="contact-name" name="name" placeholder="Your full name" required />
+              </div>
+              <div>
+                <label class="field-label" for="contact-email">Email <span class="required-asterisk">*</span></label>
+                <input class="field-underline" type="email" id="contact-email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
 
+            <div class="field-row">
+              <label class="field-label" for="contact-phone">Phone number</label>
+              <input class="field-underline field-underline--narrow" type="tel" id="contact-phone" name="phone" placeholder="+1 (323) 000-0000" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: submit -->
+        <div class="contact-section contact-section--raised contact-section--cta">
+          <h2 class="type-heading-2">Ready to send?</h2>
+          <p class="type-body-large contact-cta__body">We read every message and respond to everyone within a few days.</p>
+          <button class="btn btn--accent" type="submit">Send Message →</button>
+          <button class="contact-cta__clear" type="button" data-clear-form>Clear form</button>
+        </div>
+      </form>
+
+      <p class="form__status contact-section contact-section--raised" data-form-status hidden></p>
+    </div>
+
+    <div class="gradient-band" aria-hidden="true"></div>
+
+    <!-- Other ways to reach us -->
+    <section class="section section--canvas-vivid">
       <div class="section__intro">
-        <h2 class="type-heading-1">Join AI Design LA</h2>
-        <p class="type-body-large">
-          Meet designers, builders, researchers, and creative technologists exploring how AI is changing design
-          practice.
-        </p>
+        <p class="type-label-medium channel-links__eyebrow">Other ways to reach us</p>
+        <h2 class="type-heading-2">Find us where you are</h2>
       </div>
 
-      <div class="join__actions">
-        <a class="btn btn--accent" href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">
-          Join us on Meetup.com
-        </a>
-        <a
-          class="btn btn--brand"
-          href="https://join.slack.com/t/aidesignla/shared_invite/zt-463ey9es3-E1GQ32V9WsWTPpd9auVw3w"
-          target="_blank"
-          rel="noopener"
-        >
-          Conversation on Slack
-        </a>
-        <a class="btn btn--brand" href="contact.html">Contribute</a>
+      <div class="channel-links">
+        <div class="channel-links__item">
+          <h3 class="type-heading-4 channel-links__title">Community Slack</h3>
+          <p class="type-body-large channel-links__body">Join 800+ designers talking in real-time.</p>
+          <a
+            class="type-label-medium channel-links__link"
+            href="https://join.slack.com/t/aidesignla/shared_invite/zt-463ey9es3-E1GQ32V9WsWTPpd9auVw3w"
+            target="_blank"
+            rel="noopener"
+          >
+            Join Slack ↗
+          </a>
+        </div>
+        <div class="channel-links__item">
+          <h3 class="type-heading-4 channel-links__title">Substack Newsletter</h3>
+          <p class="type-body-large channel-links__body">Ideas, essays, and notes from the community.</p>
+          <a class="type-label-medium channel-links__link" href="https://aidesignla.substack.com/" target="_blank" rel="noopener">Subscribe ↗</a>
+        </div>
+        <div class="channel-links__item">
+          <h3 class="type-heading-4 channel-links__title">Meetup Events</h3>
+          <p class="type-body-large channel-links__body">RSVP for the next LA gathering.</p>
+          <a class="type-label-medium channel-links__link" href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">
+            RSVP ↗
+          </a>
+        </div>
       </div>
     </section>
 
@@ -256,8 +337,8 @@
     </div>
   </footer>
 
-  <script src="js/ideas-data.js"></script>
-  <script src="js/ideas.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/contact.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

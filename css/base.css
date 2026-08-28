@@ -121,6 +121,15 @@ h6 {
   text-transform: uppercase;
 }
 
+.type-label-small {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  line-height: var(--line-height-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+}
+
 .type-body-large {
   font-family: var(--font-body);
   font-weight: 400;

@@ -24,6 +24,11 @@
   --tag-research: #a173a9;
   --tag-video: #df618f;
 
+  /* ---------- Color: tool status tags ---------- */
+  /* Dropped reuses the Tools page's own status legend color; distinct
+     from --tag-research even though both read as muted mauve. */
+  --tag-dropped: #aa7ba0;
+
   /* ---------- Color: text ---------- */
   --text-primary: #ffffff;
   --text-reversed: #000000;
@@ -31,6 +36,8 @@
   --text-muted: #8f8f8f;
   --text-brand: #5a58db;
   --text-brand-light: #7a79db;
+  --text-brand-bright: #adabf5;
+  --text-accent: #ff383c;
 
   /* ---------- Color: border / rule ---------- */
   --border-rule: #7a79db;
