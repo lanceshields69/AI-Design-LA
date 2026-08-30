@@ -1,0 +1,622 @@
+/*
+  AI Design LA — Blog post template
+  Layout only. Shared components (btn, tag, site-header__logo, site-nav,
+  section shell) live in components.css.
+*/
+
+/* ---------- Post header ---------- */
+/* Unlike the sticky site-header (fixed, hidden until scroll-up), a post
+   page has no hero underneath it, so this nav is just always visible,
+   in normal document flow. */
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xxl);
+  background: var(--bg-canvas);
+}
+
+@media (max-width: 900px) {
+  .post-header {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* ---------- Cover image ---------- */
+
+.post-cover {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-xxl) var(--space-md) 0;
+}
+
+.post-cover__image {
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  max-height: 720px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* ---------- Byline + title ---------- */
+
+.post-head {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-xxl) var(--space-md) 0;
+}
+
+.post-head__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+}
+
+.post-byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.post-byline__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.post-byline__name {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-body-small);
+  letter-spacing: var(--tracking-body-small);
+  text-transform: uppercase;
+  color: var(--text-reversed);
+}
+
+.post-byline__meta {
+  font-size: var(--size-body-small);
+  line-height: var(--line-height-body-small);
+  letter-spacing: var(--tracking-body-small);
+  color: var(--text-muted);
+}
+
+.post-head__title {
+  padding-top: var(--space-md);
+  color: var(--text-reversed);
+}
+
+.post-head__subtitle {
+  padding-top: 20px;
+  color: #333;
+}
+
+.post-head__rule {
+  width: 100%;
+  height: 1px;
+  margin-top: 32px;
+  border: none;
+  border-top: 1px dashed var(--border-rule);
+}
+
+/* ---------- Article body ---------- */
+
+.post-body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-xxl) var(--space-md) 0;
+}
+
+.post-body__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 900px;
+  color: var(--text-reversed);
+}
+
+.post-body__inner p {
+  font-size: var(--size-body-medium);
+  line-height: var(--line-height-body-medium);
+  letter-spacing: var(--tracking-body);
+}
+
+.post-body__inner a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-body__heading {
+  color: var(--text-reversed);
+  text-transform: uppercase;
+}
+
+/* ---------- Pull quote ---------- */
+
+.post-quote {
+  padding: 28px 0 32px;
+  margin: var(--space-md) 0;
+  border-top: 3px solid var(--bg-accent);
+  border-bottom: 1px solid var(--bg-accent);
+}
+
+.post-quote__text {
+  color: var(--text-reversed);
+}
+
+/* .post-body__inner p (a class + element selector) outranks a bare
+   .type-heading-2/.type-heading-3 class, so it was silently overriding
+   the quote's font-size/line-height/letter-spacing back to body copy.
+   Match its specificity here so the type class actually wins. */
+.post-body__inner .post-quote__text {
+  font-size: var(--size-heading-3);
+  line-height: var(--line-height-heading-3);
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+}
+
+.post-quote__attribution {
+  padding-top: var(--space-sm);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: var(--tracking-body);
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
+
+/* ---------- Image carousel ---------- */
+
+.post-carousel {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-xxl) var(--space-md) 0;
+}
+
+.post-carousel__inner {
+  width: 100%;
+  max-width: 920px;
+}
+
+.post-carousel__viewport {
+  position: relative;
+  height: 460px;
+  overflow: hidden;
+}
+
+.post-carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform var(--duration-medium) var(--ease-standard);
+}
+
+.post-carousel__slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.post-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-carousel__nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  opacity: 0.7;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.post-carousel__nav:hover,
+.post-carousel__nav:focus-visible {
+  opacity: 1;
+}
+
+.post-carousel__nav--prev {
+  left: 0;
+}
+
+.post-carousel__nav--next {
+  right: 0;
+}
+
+.post-carousel__nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(122, 121, 219, 0.5);
+  border-radius: 2px;
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+}
+
+.post-carousel__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-rule);
+}
+
+.post-carousel__count {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.post-carousel__dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.post-carousel__dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--text-subtle);
+  cursor: pointer;
+}
+
+.post-carousel__dot.is-active {
+  width: 20px;
+  background: var(--bg-accent);
+}
+
+.post-carousel__caption {
+  padding-top: var(--space-xxs);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--tracking-body-small);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ---------- Video module ---------- */
+
+.post-video {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-xxl) var(--space-md) 0;
+}
+
+.post-video__inner {
+  width: 100%;
+  max-width: 900px;
+}
+
+.post-video__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 520px;
+}
+
+.post-video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.post-video__caption {
+  padding-top: 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--tracking-body-small);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ---------- Process box ---------- */
+
+.post-process {
+  margin-top: 40px;
+  border: 1px dashed var(--border-rule);
+  border-radius: var(--radius-sm);
+}
+
+.post-process__header {
+  padding: 20px var(--space-md) var(--space-sm);
+  border-bottom: 1px dashed var(--border-rule);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+.post-process__row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: var(--space-md);
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px dashed rgba(122, 121, 219, 0.3);
+}
+
+.post-process__row:last-child {
+  border-bottom: none;
+}
+
+.post-process__label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
+
+.post-process__value {
+  font-size: var(--size-body-small);
+  letter-spacing: var(--tracking-body-small);
+  color: var(--text-reversed);
+}
+
+@media (max-width: 640px) {
+  .post-process__row {
+    grid-template-columns: 1fr;
+    gap: var(--space-xxs);
+  }
+}
+
+/* ---------- CTA box + tags ---------- */
+/* Figma groups these into one column, CTA box directly followed by the
+   tag row on a dashed divider — kept as one wrapper here to match. */
+
+.post-cta-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-xxl) var(--space-md);
+}
+
+.post-cta-section__inner {
+  width: 100%;
+  max-width: 900px;
+}
+
+.post-cta__box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--bg-canvas);
+}
+
+.post-cta__eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+  color: var(--text-brand-bright);
+}
+
+.post-cta__title {
+  color: var(--text-primary);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xxs);
+  width: 100%;
+  padding-top: 40px;
+  margin-top: var(--space-xxl);
+  border-top: 1px dashed var(--border-rule);
+}
+
+/* ---------- About the author ---------- */
+
+.post-author {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-xxl) var(--space-md);
+  background: var(--bg-raised);
+}
+
+.post-author__inner {
+  display: flex;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 720px;
+}
+
+.post-author__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.post-author__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.post-author__eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+.post-author__name {
+  color: var(--text-reversed);
+}
+
+.post-author__bio {
+  color: var(--text-reversed);
+}
+
+.post-author__actions {
+  display: flex;
+  gap: var(--space-xs);
+  padding-top: var(--space-xxxs);
+}
+
+/* ---------- Related posts ---------- */
+
+.post-related {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-xxxl) var(--space-md);
+  background: var(--bg-white);
+}
+
+.post-related__inner {
+  width: 100%;
+  max-width: 920px;
+}
+
+.post-related__head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.post-related__title {
+  color: var(--text-reversed);
+  white-space: nowrap;
+}
+
+.post-related__rule {
+  flex: 1 0 0;
+  height: 1px;
+  border: none;
+  border-top: 1px dashed var(--border-rule);
+}
+
+.post-related__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl);
+  padding-top: 40px;
+}
+
+.post-related-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  text-align: left;
+}
+
+.post-related-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post-related-card__title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-reversed);
+}
+
+.post-related-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.post-related-card__author {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
+
+.post-related-card__time {
+  font-size: var(--size-body-small);
+  letter-spacing: var(--tracking-body-small);
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .post-related__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-author__inner {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Newsletter CTA ---------- */
+
+.post-newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  padding: 80px var(--space-xxl);
+  background: var(--bg-canvas);
+  text-align: center;
+}
+
+.post-newsletter__eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--size-label-small);
+  letter-spacing: var(--tracking-label-small);
+  text-transform: uppercase;
+  color: var(--text-brand-bright);
+}
+
+.post-newsletter__title {
+  max-width: 560px;
+  color: var(--text-primary);
+}
+
+.post-newsletter__body {
+  max-width: 440px;
+  color: var(--text-subtle);
+}

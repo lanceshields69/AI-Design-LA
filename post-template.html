@@ -1,0 +1,578 @@
+<!--
+  AI Design LA — Blog post template
+  ==================================
+  To publish a new Ideas post: duplicate this file, then edit only the
+  content inside <main> — everything else (header, footer, CSS/JS links)
+  stays the same. Each content module below is commented with what it's
+  for. Delete any module a given post doesn't need (e.g. no video, no
+  carousel) — none of them are required except the byline/title block.
+
+  Modules available, top to bottom:
+  - Cover image
+  - Byline + title + subtitle
+  - Body paragraphs (.post-body__inner p)
+  - Pull quote (.post-quote)
+  - Image carousel (supports 1+ images; nav/dots only needed past 1)
+  - Video embed (YouTube iframe, or swap for any embed)
+  - Process box (label/value table — useful for "how it was made" posts)
+  - CTA box + tags
+
+  This will eventually be ported into WordPress as a post template; the
+  module structure here is designed to map cleanly onto reusable blocks.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Best Design Tool I Used This Year Was a Conversation — AI Design LA</title>
+  <meta
+    name="description"
+    content="Using AI as a thinking partner to design a new kind of social audiobook app — and what it changed about how I work."
+  />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500&family=Roboto+Condensed:wght@700&family=Space+Grotesk:wght@700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/post.css" />
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <!-- Post header: always visible, no hero underneath it on this page -->
+  <header class="post-header">
+    <a class="site-header__logo" href="index.html">
+      <img src="images/logo-icon-animation.gif" alt="" width="43" height="48" />
+      <span class="site-header__logo-text">
+        <span>AI</span><span>Design</span><span>LA</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a class="site-nav__link" href="about.html">About</a>
+      <a class="site-nav__link" href="events.html">Events</a>
+      <a class="site-nav__link" href="community.html">Community</a>
+      <a class="site-nav__link" href="ideas.html">Ideas</a>
+      <a class="site-nav__link" href="tools.html">Tools</a>
+      <a class="site-nav__link site-nav__link--accent" href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">Join the community</a>
+    </nav>
+
+    <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu: full-screen overlay -->
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__header">
+      <a class="mobile-menu__logo" href="index.html">
+        <img src="images/logo-icon-animation.gif" alt="" width="43" height="48" />
+        <span class="mobile-menu__logo-text">
+          <span>AI</span><span>Design</span><span>LA</span>
+        </span>
+      </a>
+      <button class="mobile-menu__close" data-mobile-close aria-label="Close menu">
+        <svg viewBox="0 0 16.5332 16" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M0.268262 0.259611C0.440253 0.0933737 0.673395 0 0.916476 0C1.15956 0 1.3927 0.0933737 1.56469 0.259611L16.2412 14.4628C16.3313 14.5441 16.4036 14.6421 16.4538 14.751C16.5039 14.8599 16.5309 14.9774 16.533 15.0966C16.5352 15.2158 16.5125 15.3342 16.4664 15.4448C16.4203 15.5553 16.3516 15.6557 16.2645 15.74C16.1774 15.8243 16.0736 15.8907 15.9594 15.9354C15.8452 15.98 15.7229 16.002 15.5997 15.9999C15.4765 15.9978 15.3551 15.9717 15.2426 15.9232C15.13 15.8746 15.0288 15.8047 14.9448 15.7175L0.268262 1.51423C0.0964852 1.34779 0 1.12216 0 0.886921C0 0.651679 0.0964852 0.426056 0.268262 0.259611Z" />
+          <path fill="currentColor" d="M16.2405 0.259611C16.4123 0.426056 16.5088 0.651679 16.5088 0.886921C16.5088 1.12216 16.4123 1.34779 16.2405 1.51423L1.564 15.7175C1.39011 15.8743 1.16012 15.9596 0.922484 15.9556C0.684845 15.9515 0.458111 15.8584 0.290049 15.6957C0.121987 15.5331 0.0257188 15.3136 0.021526 15.0837C0.0173331 14.8537 0.105543 14.6311 0.267572 14.4628L14.9441 0.259611C15.1161 0.0933737 15.3492 0 15.5923 0C15.8354 0 16.0685 0.0933737 16.2405 0.259611Z" />
+        </svg>
+      </button>
+    </div>
+
+    <nav class="mobile-menu__list" aria-label="Mobile">
+      <a class="mobile-menu__link type-heading-4" href="about.html">About</a>
+      <a class="mobile-menu__link type-heading-4" href="events.html">Events</a>
+      <a class="mobile-menu__link type-heading-4" href="community.html">Community</a>
+      <a class="mobile-menu__link type-heading-4" href="ideas.html">Ideas</a>
+      <a class="mobile-menu__link type-heading-4" href="tools.html">Tools</a>
+      <a class="mobile-menu__link type-heading-4" href="index.html#join">Join us</a>
+      <a class="mobile-menu__link type-heading-4" href="contact.html#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- Cover image -->
+    <div class="post-cover">
+      <img
+        class="post-cover__image"
+        src="images/post-storyroom-cover.jpg"
+        alt="Screens from the Storyroom prototype: room list, a listening session, the Salon chapter discussion, and StoryBot chat."
+      />
+    </div>
+
+    <!-- Byline + title + subtitle -->
+    <div class="post-head">
+      <div class="post-head__inner">
+        <div class="post-byline">
+          <img class="post-byline__avatar" src="images/post-author-lance.jpg" alt="" />
+          <div>
+            <p class="post-byline__name">Lance Shields</p>
+            <p class="post-byline__meta">Editor, AI Design LA · April 2025 · 8 min read</p>
+          </div>
+        </div>
+
+        <h1 class="type-display post-head__title">The Best Design Tool I Used This Year Was a Conversation</h1>
+        <p class="type-heading-3 post-head__subtitle">
+          Using AI as a thinking partner to design a new kind of social audiobook app — and what it changed about
+          how I work.
+        </p>
+
+        <hr class="post-head__rule" />
+      </div>
+    </div>
+
+    <!-- Body: intro -->
+    <div class="post-body">
+      <div class="post-body__inner">
+        <p>
+          I was preparing for an interview with an audiobook company earlier this year. Standard research —
+          competitive landscape, user reviews, product gaps. I expected to spend a few hours on it and move on.
+        </p>
+        <p>I didn't move on.</p>
+        <p>
+          The more I looked at how people actually experience audiobooks, the more one thing kept surfacing.
+          Reading and listening are fundamentally solitary activities, and that solitude is part of the problem.
+          Digital life has made sustained attention harder. People start books and abandon them. Not because the
+          books aren't good. Because there's nothing pulling them back. No commitment, no community, no one to
+          disappoint.
+        </p>
+        <p>
+          The <a href="https://silentbook.club/" target="_blank" rel="noopener">Silent Book Club</a> phenomenon
+          pointed at something real. People show up to a coffee shop or bar, order a drink, and read alongside
+          strangers for two hours. They finish more books. The social context creates the accountability that the
+          solo experience can't. Nobody is talking. Just being around other readers is enough.
+        </p>
+        <p>
+          Audiobook apps haven't touched this. There are tens of millions of listeners and none of them can see
+          what the person next to them is reading. That felt like a significant gap.
+        </p>
+        <p>So I started building.</p>
+      </div>
+    </div>
+
+    <!-- Image carousel: add/remove data-carousel-slide + data-carousel-caption
+         pairs (kept in sync by index) for however many images a post has. -->
+    <div class="post-carousel">
+      <div class="post-carousel__inner" data-carousel>
+        <div class="post-carousel__viewport">
+          <div class="post-carousel__track" data-carousel-track>
+            <div class="post-carousel__slide" data-carousel-slide>
+              <img
+                src="images/post-storyroom-silent-book-club.jpg"
+                alt="A Silent Book Club gathering: people reading together outdoors, each with their own book."
+              />
+            </div>
+            <div class="post-carousel__slide" data-carousel-slide>
+              <img
+                src="images/silent-reading-club-2.webp"
+                alt="Three friends reading together on a couch, laughing over their books."
+              />
+            </div>
+            <div class="post-carousel__slide" data-carousel-slide>
+              <img
+                src="images/silent-reading-club-3.jpg"
+                alt="A group reading outdoors among old stone buildings and a church tower."
+              />
+            </div>
+          </div>
+          <button class="post-carousel__nav post-carousel__nav--prev" type="button" data-carousel-prev aria-label="Previous image">
+            <span class="post-carousel__nav-icon">
+              <img src="images/icons/icon-chevron-left.svg" alt="" width="16" height="16" />
+            </span>
+          </button>
+          <button class="post-carousel__nav post-carousel__nav--next" type="button" data-carousel-next aria-label="Next image">
+            <span class="post-carousel__nav-icon">
+              <img src="images/icons/icon-chevron-right.svg" alt="" width="16" height="16" />
+            </span>
+          </button>
+        </div>
+
+        <div class="post-carousel__meta">
+          <p class="post-carousel__count" data-carousel-count>1 of 3</p>
+          <div class="post-carousel__dots" data-carousel-dots></div>
+        </div>
+
+        <p class="post-carousel__caption" data-carousel-caption>
+          The Silent Book Club phenomenon: people reading alone, together. Completion rates go up when reading is
+          social.
+        </p>
+        <p class="post-carousel__caption" data-carousel-caption hidden>
+          Friends reading together and laughing — the social layer is the whole point.
+        </p>
+        <p class="post-carousel__caption" data-carousel-caption hidden>
+          A reading gathering outdoors. Same idea, different setting: people choose to read in company.
+        </p>
+      </div>
+    </div>
+
+    <!-- Body: the concept -->
+    <div class="post-body">
+      <div class="post-body__inner">
+        <h2 class="type-heading-3 post-body__heading">The concept</h2>
+        <p>
+          The core idea became <a href="https://lanceshields69.github.io/storyroom/" target="_blank" rel="noopener">Storyroom</a>.
+          Same book, same chapter, same day. A virtual room where people listen on their own schedule but share a
+          pace. At the end of each chapter they gather in a Salon to talk about what they heard — sharing passages
+          clipped directly from the audio, responding to each other, building a conversation around the book they
+          just experienced together.
+        </p>
+        <p>
+          The second idea was the one I found more interesting. I wanted to know if an AI agent could genuinely
+          extend the value of a book for readers rather than just summarizing it. Not a chatbot. A participant.
+          Something that notices the passage nobody mentioned, surfaces the context only it would know, asks the
+          question that opens the room up rather than closes it down. I called it StoryBot.
+        </p>
+
+        <blockquote class="post-quote">
+          <p class="type-heading-3 post-quote__text">
+            "Not a chatbot. A participant. Something that notices the passage nobody mentioned, surfaces the
+            context only it would know, and asks the question that opens the room up rather than closes it down."
+          </p>
+          <p class="post-quote__attribution">— Lance Shields</p>
+        </blockquote>
+
+        <p>
+          StoryBot has three roles. A coach that nudges you toward the day's chapter. A companion that answers
+          questions while you listen. A host that shows up in the Salon with a question worth discussing and steps
+          back when the conversation finds its own momentum. The question I was genuinely curious about: can AI
+          moderate a book club well? I still don't have a complete answer, but the design of the attempt taught me
+          a lot.
+        </p>
+      </div>
+    </div>
+
+    <!-- Video embed: swap the iframe src for any post's video -->
+    <div class="post-video">
+      <div class="post-video__inner">
+        <div class="post-video__frame">
+          <iframe
+            src="https://www.youtube.com/embed/7z-15ut4xAw?si=4s_bOkLTRAxWd0RS"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="post-video__caption">Storyroom demo video</p>
+      </div>
+    </div>
+
+    <!-- Body: how it got built -->
+    <div class="post-body">
+      <div class="post-body__inner">
+        <h2 class="type-heading-3 post-body__heading">How it got built</h2>
+        <p>The process was unlike anything I'd done before and I want to be honest about what that felt like.</p>
+        <p>
+          It started with conversation. Not wireframes, not a brief. I spent several sessions talking through the
+          concept with Claude, the AI, diverging on possibilities for what a social audiobook experience could be,
+          then converging on what was actually worth building. The app name came out of that conversation. So did
+          the product's core logic. I was using the LLM as a thinking partner before I touched any tool.
+        </p>
+        <p>
+          That was new for me. I've always started in Figma. The tension of where to start is one of the
+          genuinely unresolved questions about working this way. Going straight to code means you're testing real
+          interactions faster. Starting in Figma means you're thinking visually before you're committed to
+          anything. I ended up doing both, in sequence, which turned out to be the right call for this project.
+        </p>
+
+        <blockquote class="post-quote">
+          <p class="type-heading-3 post-quote__text">
+            "Describing UI states and behavior precisely is a design skill. It turned out to transfer directly."
+          </p>
+          <p class="post-quote__attribution">— Lance Shields</p>
+        </blockquote>
+
+        <p>
+          Figma Make gave me rough screens fast. Atmospheric room cards, the Salon feed, the presence orbs that
+          signal other listeners nearby. Fast enough to pressure-test the concept without spending days on it.
+          Then I moved those rough designs into Figma proper to rework them with more control, build a real
+          component library, set up a variable system. That stage is where the design got precise.
+        </p>
+        <p>
+          From there I connected Figma to Claude Code via MCP integration and moved into the terminal. The
+          prototype is a React and TypeScript app on GitHub. It simulates audiobook playback, Salon conversation,
+          StoryBot responses, waveform passage sharing. Smoke and mirrors, but interactive and shareable and real
+          enough to show people what the experience could feel like.
+        </p>
+        <p>
+          The meta layer is the part I keep thinking about. Throughout the build I used Claude in the browser to
+          write better prompts for Claude Code in the terminal. The LLM helping me communicate more precisely with
+          the LLM doing the building. It sounds circular. In practice it meant the builds came out right more
+          often on the first pass because the prompts had the right level of detail. Describing UI states and
+          behavior precisely is a design skill. It turned out to transfer directly.
+        </p>
+
+        <div class="post-process">
+          <p class="post-process__header">Process stack</p>
+          <div class="post-process__row">
+            <p class="post-process__label">Conversation</p>
+            <p class="post-process__value">Claude — thinking partner, concept development</p>
+          </div>
+          <div class="post-process__row">
+            <p class="post-process__label">Rapid screens</p>
+            <p class="post-process__value">Figma Make — exploring layout and flow</p>
+          </div>
+          <div class="post-process__row">
+            <p class="post-process__label">Visual design</p>
+            <p class="post-process__value">Figma — tightening the language</p>
+          </div>
+          <div class="post-process__row">
+            <p class="post-process__label">Prototype</p>
+            <p class="post-process__value">Claude Code · React · TypeScript · MCP</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body: what this means -->
+    <div class="post-body">
+      <div class="post-body__inner">
+        <h2 class="type-heading-3 post-body__heading">What this means</h2>
+        <p>
+          I've been doing this long enough to have seen a few moments that felt like genuine shifts. Flash in the
+          late nineties. The iPhone. Figma. This feels like one of those moments, and I'm trying to be honest
+          about it rather than either dismissive or evangelical.
+        </p>
+        <p>
+          The good is real. Ideas that would have taken a team and a sprint cycle to test can now be tested in an
+          afternoon. The gap between what a designer can conceive and what they can ship has compressed
+          dramatically. For someone with 20 years of design experience and a strong point of view, that
+          compression is almost purely a gift. The vision gets out of your head faster. You can hold more of the
+          product in your mind because you're not waiting on others to build what you're imagining.
+        </p>
+        <p>
+          The craft question is worth taking seriously. There are things you learn from drawing that you don't
+          learn from describing. The muscle memory of pushing pixels, the way your eye develops by solving layout
+          problems slowly, the understanding of engineering constraints that comes from watching engineers work. I
+          worry that designers who skip that foundation will have a harder time knowing when the output is wrong.
+          Knowing when to push back on what the AI produced requires taste, and taste takes time to develop.
+        </p>
+
+        <blockquote class="post-quote">
+          <p class="type-heading-3 post-quote__text">
+            "Reading is getting harder, the social layer is missing, and AI might be able to make book clubs work
+            at a scale…"
+          </p>
+          <p class="post-quote__attribution">— Lance Shields</p>
+        </blockquote>
+
+        <p>
+          But the opportunity is larger than the risk. Designers have always been translators, taking a fuzzy
+          human need and giving it a precise shape. That skill is more valuable now, not less. The tools have
+          changed. The job of caring about the human on the other side hasn't.
+        </p>
+        <p>
+          Storyroom is a concept. It might become a real product. It might stay a prototype that demonstrated
+          something worth demonstrating. Either way the research question that started it still feels important
+          to me: reading is getting harder, the social layer is missing, and AI might be able to make book clubs
+          work at a scale that the Wednesday night Zoom call never could.
+        </p>
+        <p>I built it to find out. The finding out was the point.</p>
+        <p>
+          Try the Storyroom prototype:
+          <a href="https://lanceshields69.github.io/storyroom/" target="_blank" rel="noopener">https://lanceshields69.github.io/storyroom/</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA box + tags -->
+    <div class="post-cta-section">
+      <div class="post-cta-section__inner">
+        <div class="post-cta__box">
+          <p class="post-cta__eyebrow">See the result</p>
+          <p class="type-heading-4 post-cta__title">The Storyroom prototype is live</p>
+          <a class="btn btn--accent btn--small" href="https://lanceshields69.github.io/storyroom/" target="_blank" rel="noopener">
+            View prototype ↗
+          </a>
+        </div>
+
+        <div class="post-tags">
+          <span class="tag tag--solid-accent">Upstream</span>
+          <span class="tag tag--outline-brand">Meetup</span>
+          <span class="tag tag--outline-brand">AI Tools</span>
+          <span class="tag tag--outline-brand">Process</span>
+          <span class="tag tag--outline-brand">Case Study</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- About the author -->
+    <div class="post-author">
+      <div class="post-author__inner">
+        <img class="post-author__avatar" src="images/post-author-lance.jpg" alt="" />
+        <div class="post-author__body">
+          <p class="post-author__eyebrow">About the author</p>
+          <p class="type-heading-4 post-author__name">Lance Shields</p>
+          <p class="type-body-medium post-author__bio">
+            Lance is the editor of AI Design LA's Substack and a product designer working at the intersection of
+            AI, interaction design, and product thinking. Upstream is his column on process, practice, and what's
+            actually changing.
+          </p>
+          <div class="post-author__actions">
+            <a class="btn btn--brand btn--small" href="https://aidesignla.substack.com/" target="_blank" rel="noopener">
+              Read on Substack ↗
+            </a>
+            <a class="btn btn--small btn--outline" href="#">Portfolio ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related posts -->
+    <div class="post-related">
+      <div class="post-related__inner">
+        <div class="post-related__head">
+          <p class="type-heading-4 post-related__title">You may also like</p>
+          <hr class="post-related__rule" />
+        </div>
+
+        <div class="post-related__grid">
+          <a class="post-related-card" href="ideas.html">
+            <img class="post-related-card__image" src="images/post-related-tools-survived.jpg" alt="" />
+            <span class="tag tag--solid-accent">Practice</span>
+            <p class="post-related-card__title">The tools that survived our first year of AI design</p>
+            <div class="post-related-card__meta">
+              <span class="post-related-card__author">Devon Castillo</span>
+              <span class="post-related-card__time">7 min</span>
+            </div>
+          </a>
+
+          <a class="post-related-card" href="ideas.html">
+            <img class="post-related-card__image" src="images/post-related-handoff-disappears.jpg" alt="" />
+            <span class="tag tag--solid-accent">Craft</span>
+            <p class="post-related-card__title">When the handoff disappears: working directly in code</p>
+            <div class="post-related-card__meta">
+              <span class="post-related-card__author">Marcus Webb</span>
+              <span class="post-related-card__time">9 min</span>
+            </div>
+          </a>
+
+          <a class="post-related-card" href="ideas.html">
+            <img class="post-related-card__image" src="images/post-related-800-designers.jpg" alt="" />
+            <span class="tag tag--solid-accent">Community</span>
+            <p class="post-related-card__title">What 800 designers think about AI right now</p>
+            <div class="post-related-card__meta">
+              <span class="post-related-card__author">Sam Okafor</span>
+              <span class="post-related-card__time">5 min</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="post-newsletter">
+      <p class="post-newsletter__eyebrow">More ideas like this</p>
+      <h2 class="type-heading-1 post-newsletter__title">Get the AI Design LA newsletter</h2>
+      <p class="type-body-medium post-newsletter__body">
+        Essays, field notes, and community perspectives on design in the age of AI. New issues every other week.
+      </p>
+      <a class="btn btn--accent" href="https://aidesignla.substack.com/" target="_blank" rel="noopener">
+        Subscribe on Substack ↗
+      </a>
+    </div>
+
+    <div class="gradient-band" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <hr class="site-footer__rule" />
+
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <p class="site-footer__brand-name">
+          <img src="images/logo-icon-animation.gif" alt="" width="30" height="33" />
+          <span>AI Design LA</span>
+        </p>
+        <p class="site-footer__brand-copy">
+          A community for designers shaping how AI products are imagined, designed, and built in Los Angeles.
+        </p>
+        <div class="site-footer__brand-links">
+          <a class="btn btn--accent btn--small" href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">
+            Attend on Meetup
+          </a>
+          <a
+            class="btn btn--brand btn--small"
+            href="https://join.slack.com/t/aidesignla/shared_invite/zt-463ey9es3-E1GQ32V9WsWTPpd9auVw3w"
+            target="_blank"
+            rel="noopener"
+          >
+            Discuss on Slack
+          </a>
+          <a class="btn btn--brand btn--small" href="https://aidesignla.substack.com/" target="_blank" rel="noopener">Read on Substack</a>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Explore</p>
+        <nav class="site-footer__col-links" aria-label="Explore">
+          <a href="events.html">Events</a>
+          <a href="community.html">Community</a>
+          <a href="ideas.html">Ideas</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Join</p>
+        <nav class="site-footer__col-links" aria-label="Join">
+          <a href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">RSVP on Meetup</a>
+          <a
+            href="https://join.slack.com/t/aidesignla/shared_invite/zt-463ey9es3-E1GQ32V9WsWTPpd9auVw3w"
+            target="_blank"
+            rel="noopener"
+          >
+            Join the Slack
+          </a>
+          <a href="https://aidesignla.substack.com/" target="_blank" rel="noopener">Subscribe on Substack</a>
+          <a href="contact.html">Get involved</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Follow</p>
+        <nav class="site-footer__col-links" aria-label="Follow">
+          <a href="https://www.meetup.com/ai-design-la/" target="_blank" rel="noopener">Meetup</a>
+          <a href="https://www.linkedin.com/company/ai-design-la/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/aidesignla" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://aidesignla.substack.com/" target="_blank" rel="noopener">Substack</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Community</p>
+        <nav class="site-footer__col-links" aria-label="Community" id="contribute">
+          <a href="contact.html#contact">Contact</a>
+          <a href="community.html#guidelines">Community guidelines</a>
+          <a href="contact.html#propose-a-talk">Propose a talk</a>
+          <a href="contact.html#share-a-project">Share a project</a>
+          <a href="contact.html#sponsorship">Sponsorship</a>
+        </nav>
+      </div>
+    </div>
+
+    <hr class="site-footer__rule" />
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__tagline">Made by designers in Los Angeles for whatever comes next.</p>
+      <div class="site-footer__legal">
+        <span>© 2026 AI Design LA</span>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/post-carousel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

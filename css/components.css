@@ -1046,6 +1046,12 @@
   border: 1px dashed var(--border-rule);
 }
 
+.tag--outline-brand {
+  background: transparent;
+  border: 1px dashed var(--border-rule);
+  color: var(--text-brand);
+}
+
 /* ---------- Filter bar ---------- */
 
 .filter-bar {
